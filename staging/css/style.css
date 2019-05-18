@@ -37,41 +37,70 @@ header {
 .sidebar {
     border: solid 3px rgb(0, 0, 255);
     height: 25em;
-    background-color: rgb(185, 185, 253);
+    background-color: whitesmoke;
+    border-radius: .5em;
+    box-shadow: .8em .8em 0 rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem 1rem 5rem;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#c7dae4), color-stop(4%, #ffffff)) 0 .3em;
+    background-size: 100% 3rem;
+    position: relative;
+    line-height: 3rem;
+}
+.sidebar p {
+    margin: 0 0 3rem;
+}
+.sidebar:before {
+    content: "";
+    position: absolute;
+    width: .3em;
+    top: 0;
+    left: 2.8em;
+    bottom: 0;
+    border: 1px solid;
+    border-color: transparent #db8888;
 }
 main {
     border: solid 3px green;
     height: 45em;
-    background-color: rgb(122, 155, 122);
 
 }
 .flex-container {
     display: flex;
     justify-content: space-around;
+    size: 60%;
 }
 
 .leftCircle {
-    height: 20em;
-    width: 20em;
+    width: 26em;
+    height: 26em;
     border: 1px solid black;
     border-radius: 50%;
     display: inline-flex;
-    margin: 3em;
+    margin: 1rem;
 }
 
 .rightCircle {
-    height: 20em;
-    width: 20em;
+    width: 26em;
+    height: 26em;
     border: 1px solid black;
     border-radius: 50%;
     display: inline-flex;
-    margin: 3em;
+    margin: 1rem;
+}
+
+.transport {
+    width: 60%;
+    height: 5rem;
+    border: 2px solid red;
+    margin: 4rem auto auto auto;
+    border-radius: 1em;
 }
 
 .right {
     border: solid 3px yellow;
     height: 20em;
     background-color: rgb(255, 255, 197);
+    margin: 0 0 0 1em;
 }
 footer {
     border: solid 3px black;
