@@ -100,6 +100,7 @@ main {
     border: solid 3px yellow;
     height: 20em;
     background-color: rgb(255, 255, 197);
+    margin: 0 0 0 1em;
 }
 footer {
     border: solid 3px black;
