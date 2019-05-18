@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* add grid container - divs */
+
+header      { grid-area: header; }
+.sidebar    { grid-area: sidebar; }
+main        { grid-area: main; }
+.right      { grid-area: right; }
+footer      { grid-area: footer; }
+
+.grid-container {
+    display: grid;
+    min-height: 100%;
+    grid-template: 
+                    " header header header header "
+                    " sidebar main main right "
+                    " sidebar main main right "
+                    " sidebar main main right "
+                    " footer footer footer footer ";
+    grid-template-columns: 1fr 2fr 2fr 1fr; 
+    grid-gap: .3em;
+
+}
+
+.grid-container > div {
+    font-size: 1em;
+}
+
+header {
+    border: solid 3px red;
+    height: 5em;
+    background-color: rgb(255, 184, 184)
+}
+.sidebar {
+    border: solid 3px rgb(0, 0, 255);
+    height: 25em;
+    background-color: rgb(185, 185, 253);
+}
+main {
+    border: solid 3px green;
+    height: 30em;
+    background-color: rgb(122, 155, 122);
+
+}
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.leftCircle {
+    height: 20em;
+    width: 20em;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: inline-flex;
+    margin: 3em;
+}
+
+.rightCircle {
+    height: 20em;
+    width: 20em;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: inline-flex;
+    margin: 3em;
+}
+
+.right {
+    border: solid 3px yellow;
+    height: 20em;
+    background-color: rgb(255, 255, 197);
+}
+footer {
+    border: solid 3px black;
+    height: 10em;
+    background-color: rgb(155, 155, 155);
+}
+
