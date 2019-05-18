@@ -27,6 +27,10 @@ module.exports = function (app) {
     });
 
     app.post("/api/projects", function (req, res) {
+
+        //ADD CODE FOR FILE POSITING HERE
+        //it will use req.files
+
         db.Project.create(req.body).then(function (dbProject) {
             res.json(dbProject);
         });

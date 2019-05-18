@@ -31,7 +31,7 @@ module.exports = function (app) {
         username: req.params.username,
         password: req.params.password,
       },
-      includ: [db.Project],
+      include: [db.Project],
     }).then(function (dbUser) {
 
     });
@@ -39,15 +39,31 @@ module.exports = function (app) {
 
   //create a new user
   app.post("/api/users", function (req, res) {
-    db.Example.create(req.body).then(function (dbExample) {
-      res.json(dbExample);
-    });
+    db.User.findOne({
+      where: {
+        username: req.body.username,
+      }
+    }).then(function (dbUser) {
+      if(dbUser) {
+        res.send("user already exists");
+      }
+      else {
+        let newUser = {
+          username: req.body.username,
+          password: req.body.password,
+        }
+    
+        db.User.create(newUser).then(function (dbNew) {
+          res.json(dbNew);
+        });
+      }
+    })
   });
 
   //delete a user by id, not sure of current use cases
   //but i could think of a few reasons to add in later iterations
   app.delete("/api/users/:uid", function (req, res) {
-    db.Example.destroy({ where: { uid: req.params.uid } }).then(function (dbExample) {
+    db.Example.destroy({ where: { username: req.params.username } }).then(function (dbExample) {
       res.json(dbExample);
     });
   });
@@ -57,7 +73,7 @@ module.exports = function (app) {
       req.body,
       {
         where: {
-          uid: req.body.uid,
+          username: req.body.username,
         },
       }).then(function (dbUser) {
 

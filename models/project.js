@@ -1,13 +1,14 @@
 module.exports = function(sequelize, DataTypes) {
     let Project = sequelize.define("Project", {
-        pid: {
+        title: {
             type: DataTypes.STRING,
             primaryKey: true,
         },
-        title: DataTypes.STRING,
         description: DataTypes.STRING(150),
-        oid: DataTypes.STRING,
-        cids: DataTypes.JSON,
+        category: DataTypes.STRING(),
+        location: DataTypes.JSON,
+        oName: DataTypes.STRING,
+        cNames: DataTypes.JSON,
     });
 
     Project.associate = function(models) {
