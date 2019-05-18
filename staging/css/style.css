@@ -41,10 +41,33 @@ header {
 }
 main {
     border: solid 3px green;
-    height: 30em;
+    height: 45em;
     background-color: rgb(122, 155, 122);
 
 }
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.leftCircle {
+    height: 20em;
+    width: 20em;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: inline-flex;
+    margin: 3em;
+}
+
+.rightCircle {
+    height: 20em;
+    width: 20em;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: inline-flex;
+    margin: 3em;
+}
+
 .right {
     border: solid 3px yellow;
     height: 20em;
