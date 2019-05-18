@@ -41,8 +41,7 @@ header {
 }
 main {
     border: solid 3px green;
-    height: 30em;
-    background-color: rgb(122, 155, 122);
+    height: 45em;
 
 }
 .flex-container {
@@ -51,21 +50,28 @@ main {
 }
 
 .leftCircle {
-    height: 20em;
-    width: 20em;
+    height: 25rem;
+    width: 25rem;
     border: 1px solid black;
     border-radius: 50%;
     display: inline-flex;
-    margin: 3em;
+    margin: 2rem;
 }
 
 .rightCircle {
-    height: 20em;
-    width: 20em;
+    height: 25rem;
+    width: 25rem;
     border: 1px solid black;
     border-radius: 50%;
     display: inline-flex;
-    margin: 3em;
+    margin: 2rem;
+}
+
+.transport {
+    width: 90%;
+    height: 5rem;
+    border: 2px solid red;
+    margin: 2rem auto auto auto;
 }
 
 .right {
