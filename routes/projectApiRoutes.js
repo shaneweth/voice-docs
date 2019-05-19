@@ -31,6 +31,7 @@ module.exports = function (app) {
         //ADD CODE FOR FILE POSITING HERE
         //it will use req.files
 
+        
         db.Project.create(req.body).then(function (dbProject) {
             res.json(dbProject);
         });
