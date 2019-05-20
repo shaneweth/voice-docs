@@ -72,6 +72,7 @@ module.exports = function (app) {
             });
         });
         return;
+
     });
 
     app.delete("/api/projects/:id", function (req, res) {
