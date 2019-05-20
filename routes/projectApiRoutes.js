@@ -31,7 +31,7 @@ module.exports = function (app) {
     });
 
     app.get("/", function(req, res){
-        res.json(__dirname + "/uploads");
+        res.json(__dirname + "/");
     });
 
     // app.post("/api/projects", function (req, res) {
