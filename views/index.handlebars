@@ -1,35 +1,3 @@
-<<<<<<< HEAD
-<div id="home">
-  <button id="auth" onclick="window.location = '/auth'">
-    auth
-  </button>
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text"
-              placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description"
-              placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Users:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each users}}
-          <li data-id="{{this.uid}}" class="list-group-item">
-            <a href="users/{{this.uid}}">{{this.username}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-=======
 <div class="grid-container">
     <header class="header">
         <form action="/api/upload" enctype="multipart/form-data" method="POST">
@@ -65,7 +33,6 @@
             <li>Example Result 2</li>
             <li>Example Result 3</li>
             <li>Example Result 4</li>
->>>>>>> origin/sw_staging
         </ul>
     </right>
 

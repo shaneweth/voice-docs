@@ -79,8 +79,4 @@ module.exports = function (app) {
 
       });
   });
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> origin/sw_staging
