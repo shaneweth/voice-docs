@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div id="home">
   <button id="auth" onclick="window.location = '/auth'">
     auth
@@ -28,12 +29,53 @@
             <button class="btn btn-danger float-right delete">ｘ</button>
           </li>
           {{/each}}
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+=======
+<div class="grid-container">
+    <header class="header">
+        <form action="/api/upload" enctype="multipart/form-data" method="POST">
+            <input type="text" name="project" />
+            <input type="file" name="myFile" />
+            <input type="submit" value="Upload a file" />
+        </form>
+    </header>
+    <sidebar class="sidebar">
+        <p contenteditable="true">notes</p>
+    </sidebar>
 
+    <main class="main">
+
+        <div class="flex-container">
+
+            <div class="leftCircle">
+            </div>
+            <div class="rightCircle">
+            </div>
+        </div>
+
+        <div class="transport"></div>
+
+    </main>
+    
+    <right class="right">
+        <label for="site-search">search:</label>
+        <input type="search" id="site-search" name="q" aria-label="Search">
+        <button>search</button>
+        <ul>
+            <li>Example Result 1</li>
+            <li>Example Result 2</li>
+            <li>Example Result 3</li>
+            <li>Example Result 4</li>
+>>>>>>> origin/sw_staging
+        </ul>
+    </right>
+
+    <footer class="footer">
+    </footer>
+
+<<<<<<< HEAD
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
 <script src="/js/index.js"></script>
+=======
+</div>
+>>>>>>> origin/sw_staging
