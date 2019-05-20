@@ -3,8 +3,8 @@ const db = require("../models");
 module.exports = function (app) {
     app.get("/api/projects", function (req, res) {
         let query = {};
-        if (req.query.oid) {
-            query.oid = req.query.oid;
+        if (req.query.oName) {
+            query.oName = req.query.oName;
         }
 
         db.Project.findAll({
@@ -15,10 +15,10 @@ module.exports = function (app) {
         });
     });
 
-    app.get("/api/projects/:id", function (req, res) {
+    app.get("/api/projects/:title", function (req, res) {
         db.Project.findOne({
             where: {
-                id: req.params.pid
+                title: req.params.title
             },
             include: [db.User]
         }).then(function (dbProject) {
@@ -36,10 +36,10 @@ module.exports = function (app) {
         });
     });
 
-    app.delete("/api/projects/:id", function (req, res) {
+    app.delete("/api/projects/:title", function (req, res) {
         db.Project.destroy({
             where: {
-                id: req.params.pid
+                title: req.params.title
             }
         }).then(function (dbProject) {
             res.json(dbProject);
@@ -51,7 +51,7 @@ module.exports = function (app) {
             req.body,
             {
                 where: {
-                    id: req.body.pid
+                    title: req.body.title
                 }
             }).then(function (dbProject) {
                 res.json(dbProject);
