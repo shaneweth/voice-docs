@@ -1,6 +1,11 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+var formidable = require("formidable");
+var fs = require("fs");
+var bodyParser = require("body-parser");
+var multer = require("multer");
+
 
 var db = require("./models");
 
@@ -11,6 +16,8 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+// bodyParser for upload
+app.use(bodyParser.urlencoded({extended: true}));
 
 // Handlebars
 app.engine(

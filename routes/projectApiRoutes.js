@@ -1,4 +1,8 @@
 const db = require("../models");
+var formidable = require("formidable");
+var fs = require("fs");
+var path = require("path");
+var http = require("http");
 
 module.exports = function (app) {
     app.get("/api/projects", function (req, res) {
@@ -26,16 +30,36 @@ module.exports = function (app) {
         });
     });
 
-    app.post("/api/projects", function (req, res) {
-
-        //ADD CODE FOR FILE POSITING HERE
-        //it will use req.files
-
-        
-        db.Project.create(req.body).then(function (dbProject) {
-            res.json(dbProject);
-        });
+    app.get('/', function (req, res) {
+        res.sendFile(__dirname + '/');
     });
+
+    app.post('/', function (req, res) {
+        var form = new formidable.IncomingForm();
+
+        form.parse(req);
+
+        form.on('fileBegin', function (name, file) {
+            file.path = __dirname + '/uploads/' + file.name;
+        });
+
+        form.on('file', function (name, file) {
+            console.log('Uploaded ' + file.name);
+        });
+
+        res.sendFile(__dirname + '/');
+    });
+
+    // app.post("/api/projects", function (req, res) {
+
+    //     //ADD CODE FOR FILE POSITING HERE
+    //     //it will use req.files
+
+
+    //     db.Project.create(req.body).then(function (dbProject) {
+    //         res.json(dbProject);
+    //     });
+    // });
 
     app.delete("/api/projects/:id", function (req, res) {
         db.Project.destroy({
@@ -49,13 +73,12 @@ module.exports = function (app) {
 
     app.put("/api/projects", function (req, res) {
         db.Project.update(
-            req.body,
-            {
+            req.body, {
                 where: {
                     id: req.body.pid
                 }
             }).then(function (dbProject) {
-                res.json(dbProject);
-            });
+            res.json(dbProject);
+        });
     });
 }
