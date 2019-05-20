@@ -4,7 +4,6 @@ var exphbs = require("express-handlebars");
 var formidable = require("formidable");
 var fs = require("fs");
 var bodyParser = require("body-parser");
-var multer = require("multer");
 
 
 var db = require("./models");
@@ -52,26 +51,26 @@ db.sequelize.sync(syncOptions).then(function() {
   });
 });
 
-// Set Storage
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads")
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + "-" + Date.now())
-  }
-})
+// // Set Storage
+// var storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "uploads")
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, file.fieldname + "-" + Date.now())
+//   }
+// })
 
-var upload = multer({ storage: storage })
+// var upload = multer({ storage: storage })
 
-app.post("/uploads", upload.single("myFile"), (req, res, next) => {
-  const file = req.file
-  if (!file) {
-    const error = new Error("Please Upload Stuff, fool")
-    error.httpStatusCode = 400
-    return next(error)
-  }
-  res.send(file)
-})
+// app.post("/uploads", upload.single("myFile"), (req, res, next) => {
+//   const file = req.file
+//   if (!file) {
+//     const error = new Error("Please Upload Stuff, fool")
+//     error.httpStatusCode = 400
+//     return next(error)
+//   }
+//   res.send(file)
+// })
 
 module.exports = app;
