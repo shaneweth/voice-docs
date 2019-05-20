@@ -1,7 +1,7 @@
 const db = require("../models");
 var formidable = require("formidable");
 var util = require("util");
-var fs = require("fs");
+var fs = require("fs-extra");
 
 module.exports = function (app) {
     app.get("/api/projects", function (req, res) {
@@ -51,16 +51,32 @@ module.exports = function (app) {
 
         form.uploadDir = __dirname + "/";
 
-        form.on("file", function(field, file) {
-            fs.rename(file.path, form.uploadDir + "")
-        })
-
         form.parse(req, function (err, field, file) {
             // writes the json to a page
-            // res.writeHead(200, { 'content-type': 'text/plain' });
-            // res.write('received upload:\n\n');
-            // res.end(util.inspect({ fields: fields, files: files }));
+            res.writeHead(200, { 'content-type': 'text/plain' });
+            res.write('received upload:\n\n');
+            res.end(util.inspect({ file: file }));
         })
+
+        form.on("end", function (fields, files) {
+            // temp loc of uploaded file
+            var temp_path = this.openedFiles[0].path;
+            // file name of uploaded file
+            var file_name = this.openedFiles[0].name;
+            // new local file loc
+            var new_location = "/Users/shane/git/voice-docs/public/audio/";
+
+            fs.copy(temp_path, new_location + file_name, function (err) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("yessirrr!!")
+                    console.log(new_location);
+                }
+            });
+        });
+        return;
+
 
     });
 
