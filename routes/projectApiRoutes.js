@@ -29,20 +29,16 @@ module.exports = function (app) {
         });
     });
 
-    // app.get("/", function(req, res){
-    //     res.json(__dirname + "/");
+    // app.post("/api/projects", function (req, res) {
+
+    //     //ADD CODE FOR FILE POSITING HERE
+    //     //it will use req.files
+
+
+    //     db.Project.create(req.body).then(function (dbProject) {
+    //         res.json(dbProject);
+    //     });
     // });
-
-    app.post("/api/projects", function (req, res) {
-
-        //ADD CODE FOR FILE POSITING HERE
-        //it will use req.files
-
-
-        db.Project.create(req.body).then(function (dbProject) {
-            res.json(dbProject);
-        });
-    });
 
 
     app.post("/api/upload", function (req, res) {
@@ -76,8 +72,6 @@ module.exports = function (app) {
             });
         });
         return;
-
-
     });
 
     app.delete("/api/projects/:id", function (req, res) {

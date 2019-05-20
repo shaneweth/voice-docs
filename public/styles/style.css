@@ -71,8 +71,8 @@ main {
 }
 
 .leftCircle {
-    width: 26em;
-    height: 26em;
+    width: 28em;
+    height: 28em;
     border: 1px solid black;
     border-radius: 50%;
     display: inline-flex;
@@ -80,8 +80,8 @@ main {
 }
 
 .rightCircle {
-    width: 26em;
-    height: 26em;
+    width: 28em;
+    height: 28em;
     border: 1px solid black;
     border-radius: 50%;
     display: inline-flex;
@@ -99,12 +99,11 @@ main {
 .right {
     border: solid 3px yellow;
     height: 20em;
-    background-color: rgb(255, 255, 197);
     margin: 0 0 0 1em;
 }
 footer {
     border: solid 3px black;
-    height: 10em;
+    height: 8em;
     background-color: rgb(155, 155, 155);
 }
 
