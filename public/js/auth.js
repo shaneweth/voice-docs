@@ -1,4 +1,3 @@
-
 $("#submit").on("click", function(e) {
     e.preventDefault();
     let user = $("#username-box").val().trim();

@@ -1,4 +1,3 @@
-
 module.exports = function(sequelize, DataTypes) {
     let Project = sequelize.define("Project", {
         title: {
