@@ -29,15 +29,6 @@ module.exports = function (app) {
         });
     });
 
-    // app.post("/api/projects", function (req, res) {
-
-    //     //ADD CODE FOR FILE POSITING HERE
-    //     //it will use req.files
-
-
-    //     
-    // });
-
 
     app.post("/api/projects", function (req, res) {
         // var localStorage;
@@ -51,7 +42,7 @@ module.exports = function (app) {
             res.write('received upload:\n\n');
             res.end(util.inspect({ file: file }));
         })
-
+            // ****IMPORTANT!! SET UP FALSY TEST FOR INPUT
         form.on("end", function (fields, files) {
             // temp loc of uploaded file
             var temp_path = this.openedFiles[0].path;
