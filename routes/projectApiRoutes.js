@@ -35,13 +35,11 @@ module.exports = function (app) {
     //     //it will use req.files
 
 
-    //     db.Project.create(req.body).then(function (dbProject) {
-    //         res.json(dbProject);
-    //     });
+    //     
     // });
 
 
-    app.post("/api/upload", function (req, res) {
+    app.post("/api/projects", function (req, res) {
         // var localStorage;
         var form = new formidable.IncomingForm();
 
@@ -71,7 +69,12 @@ module.exports = function (app) {
                 }
             });
         });
+
+        db.Project.create(req.body).then(function (dbProject) {
+            res.json(dbProject);
+        });
         return;
+
     });
 
     app.delete("/api/projects/:title", function (req, res) {
