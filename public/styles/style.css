@@ -50,7 +50,7 @@ footer {
 header {
     border: solid 3px red;
     height: 8rem;
-    justify-items: space-evenly;
+    justify-items: stretch;
 }
 
 /* Style the button that is used to open and close the collapsible content */
@@ -61,7 +61,7 @@ header {
     color: #ffffff;
     cursor: pointer;
     padding: 1em;
-    margin: .8rem 0 .8rem 10%;
+    margin: 1rem 40% 1rem 5%;
     border: inset .5em rgba(121, 51, 51, 0.411);
     border-radius: 50%;
     text-align: center;
@@ -76,6 +76,7 @@ header {
     color: #ffffff;
     cursor: pointer;
     padding: 1em;
+    margin: 1rem 5% 1rem 41%;
     border: inset .5em rgba(121, 51, 51, 0.411);
     border-radius: 50%;
     text-align: center;
@@ -101,10 +102,9 @@ header {
     padding: 2rem;
     display: none;
     position: fixed;
-    justify-items: center;
     overflow: hidden;
-    background-color: #6aa1cee8;
-    margin: 10rem auto auto;
+    background-color: #6aa1cef1;
+    margin: auto auto;
     width: 20%;
     z-index: 1;
     border: black 1px solid;
