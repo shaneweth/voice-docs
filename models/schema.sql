@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
-
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+<<<<<<< HEAD
+DROP DATABASE IF EXISTS voicedocs;
+CREATE DATABASE voicedocs;
+=======
+>>>>>>> origin/sw_staging

@@ -1,0 +1,29 @@
+{
+  "name": "voice-docs",
+  "version": "1.0.0",
+  "description": "Memo storage / music sketchpad",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaneweth/voice-docs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaneweth/voice-docs/issues"
+  },
+  "homepage": "https://github.com/shaneweth/voice-docs#readme",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "eslint": "^5.16.0",
+    "express": "^4.17.0",
+    "express-handlebars": "^3.1.0",
+    "formidable": "^1.2.1",
+    "fs-extra": "^8.0.1",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.8.6"
+  }
+}
