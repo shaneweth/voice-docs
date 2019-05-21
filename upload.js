@@ -1,55 +1,38 @@
-// Load the SDK and UUID
-var AWS = require('aws-sdk');
-var uuid = require('uuid');
-
-
-// // upload file that is created now to aws
-// // =========================================
-// // Create unique bucket name
-// var bucketName = 'teamawesome123';
-// // Create name for uploaded object key
-// var keyName = 'testing_thing.txt';
-
-// var objectParams = { Bucket: bucketName, Key: keyName, Body: 'Hello World!' };
-
-// // Create object upload promise
-// var uploadPromise = new AWS.S3({ apiVersion: '2006-03-01' }).putObject(objectParams).promise();
-// uploadPromise.then(
-//     function (data) {
-//         console.log("Successfully uploaded data to " + bucketName + "/" + keyName);
-//     });
-
-//     // ===========================================
-
-    
 // upload file that is created now to aws
 // =========================================
+const AWS = require('aws-sdk');
+const fs = require('fs');
+const path = require('path');
 
+//configuring the AWS environment
+AWS.config.update({
+    accessKeyId: "AKIAQMRVTQ4UPCI2NHHQ",
+    secretAccessKey: "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"
+  });
+
+var s3 = new AWS.S3();
+var filePath = "./apple.jpg";
+
+//configuring parameters
+var params = {
+  Bucket: 'teamawesome123',
+  Body : fs.createReadStream(filePath),
+  Key : "folder/"+Date.now()+"_"+path.basename(filePath)
+};
+
+s3.upload(params, function (err, data) {
+  //handle error
+  if (err) {
+    console.log("Error", err);
+  }
+   //success
+   if (data) {
+    console.log("Uploaded in:", data.Location);
+  }
+});
 
     // ===========================================
 
 
     // get files from aws
     // =======================================
-
-    // var params = {
-    //     Bucket: "teamawesome123", 
-    //     Key: "testing_thing.txt"
-    //    };
-    //    var downloadFile = new AWS.S3({ apiVersion: '2006-03-01' }).getObject(params, function(err, data) {
-    //      if (err) console.log(err, err.stack); // an error occurred
-    //      else     console.log(data);           // successful response
-    //      /*
-    //      data = {
-    //       AcceptRanges: "bytes", 
-    //       ContentLength: 3191, 
-    //       ContentType: "image/jpeg", 
-    //       ETag: "\"6805f2cfc46c0f04559748bb039d69ae\"", 
-    //       LastModified: <Date Representation>, 
-    //       Metadata: {
-    //       }, 
-    //       TagCount: 2, 
-    //       VersionId: "null"
-    //      }
-    //      */
-    //    });

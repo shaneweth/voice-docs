@@ -38,7 +38,7 @@ module.exports = function (app) {
     //     
     // });
 
-
+// ===========================================================================
     app.post("/api/projects", function (req, res) {
         // var localStorage;
         var form = new formidable.IncomingForm();
@@ -69,7 +69,11 @@ module.exports = function (app) {
                 }
             });
         });
-
+// ------------------------------------------------
+// username
+// -> projectname
+// -->->files
+// --------------------------
         db.Project.create(req.body).then(function (dbProject) {
             res.json(dbProject);
         });
