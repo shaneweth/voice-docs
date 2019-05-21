@@ -33,72 +33,55 @@ footer      { grid-area: footer; }
     font-size: 1em;
 }
 
+
+
 header {
     border: solid 3px red;
     height: 5em;
     background-color: rgb(255, 184, 184)
 }
 
-/* MODAL FOR FORM INPUT */
-.modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 990;
-
-}
-
-.modal .overlay {
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 995;
-    background: rgba(0, 0, 0, 0.8);
-}
-
-.modal .modal_content {
-    z-index: 999;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-height: 90%;
-    overflow: auto;
-    background: #ffffff;
-    box-sizing: border-box;
-    padding: 1.5em;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
-    border-radius: 4px;
-    width: 30em;
-
-}
-
-.modal .modal_content > h3 {
-    font-size: 1.8em;
-    font-weight: 200;
-    margin: 1em 0 2em;
-    text-align: center;
-}
-
-.modal .close_modal {
-    position: absolute;
-    right: 1em;
-    top: 1em;
+    width: 10em;
+    background-color: rgba(126, 53, 53, 0.89);
+    color: #ffffff;
     cursor: pointer;
-    font-size: 1.5em;
-    opacity: .5;
-    background: none;
-    border: none;
-    transition: opacity 0.2s ease;
-}
+    padding: 1em;
+    margin: .5rem;
+    border: inset .5em rgba(73, 31, 31, 0.562);
+    border-radius: 30%;
+    text-align: center;
+    outline: none;
+    font-size: 1em;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .collapsible:hover {
+    background-color: rgba(133, 69, 69, 0.76);
 
-.modal .close_modal:hover {
-    opacity: .9;
-}
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+    padding: 2rem;
+    display: none;
+    position: relative;
+    justify-items: center;
+    overflow: hidden;
+    background-color: #6aa1cee8;
+    margin: 10rem auto auto;
+    width: 20%;
+    z-index: 1;
+    border: black 1px solid;
+    border-radius: 5px;
+
+  }
+
+  .content h3 {
+      margin: .5em;
+  }
 
 .sidebar {
     border: solid 3px rgb(0, 0, 255);
@@ -111,6 +94,7 @@ header {
     background-size: 100% 3rem;
     position: relative;
     line-height: 3rem;
+    z-index: -1;
 }
 .sidebar p {
     margin: 0 0 3rem;
@@ -128,6 +112,7 @@ header {
 main {
     border: solid 3px green;
     height: 45em;
+    z-index: -1;
 
 }
 .flex-container {

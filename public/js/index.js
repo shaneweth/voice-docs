@@ -1,29 +1,16 @@
-// For Modals
+// for hidden collapsible upload element
 
-var btn = document.getElementById("modal_opener");
-var modal = document.querySelector(".modal");
+var coll = document.getElementsByClassName("collapsible");
+var i;
 
-function attachModalListeners(modalElem) {
-    modalElem.querySelector(".close_modal").addEventListener("click", toggleModal);
-    modalElem.querySelector(".overlay").addEventListener("click", toggleModal);
-}
-
-function detachModalListeners(modalElem) {
-    modalElem.querySelector(".close_modal").removeEventListener("click", toggleModal);
-    modalElem.querySelector(".overlay").removeEventListener("click", toggleModal);
-}
-
-function toggleModal() {
-    var currentState = modal.style.display;
-
-    // if modal is visible then hide, else display
-    if (currentState === "none") {
-        modal.style.display = "block";
-        attachModalListeners(modal);
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
     } else {
-        modal.style.display = "none";
-        detachModalListeners(modal);
+      content.style.display = "block";
     }
+  });
 }
-
-btn.addEventListener("click", toggleModal);
