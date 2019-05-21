@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* add grid container - divs */
+
+header      { grid-area: header; }
+.sidebar    { grid-area: sidebar; }
+main        { grid-area: main; }
+.right      { grid-area: right; }
+footer      { grid-area: footer; }
+
+.grid-container {
+    display: grid;
+    min-height: 100%;
+    grid-template: 
+                    " header header header header "
+                    " sidebar main main right "
+                    " sidebar main main right "
+                    " sidebar main main right "
+                    " footer footer footer footer ";
+    grid-template-columns: 1fr 2fr 2fr 1fr; 
+    grid-gap: .3em;
+
+}
+
+.grid-container > div {
+    font-size: 1em;
+}
+
+header {
+    border: solid 3px red;
+    height: 5em;
+    background-color: rgb(255, 184, 184)
+}
+.sidebar {
+    border: solid 3px rgb(0, 0, 255);
+    height: 25em;
+    background-color: whitesmoke;
+    border-radius: .5em;
+    box-shadow: .8em .8em 0 rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem 1rem 5rem;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#c7dae4), color-stop(4%, #ffffff)) 0 .3em;
+    background-size: 100% 3rem;
+    position: relative;
+    line-height: 3rem;
+}
+.sidebar p {
+    margin: 0 0 3rem;
+}
+.sidebar:before {
+    content: "";
+    position: absolute;
+    width: .3em;
+    top: 0;
+    left: 2.8em;
+    bottom: 0;
+    border: 1px solid;
+    border-color: transparent #db8888;
+}
+main {
+    border: solid 3px green;
+    height: 45em;
+
+}
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    size: 60%;
+}
+
+.leftCircle {
+    width: 28em;
+    height: 28em;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: inline-flex;
+    margin: 1rem;
+}
+
+.rightCircle {
+    width: 28em;
+    height: 28em;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: inline-flex;
+    margin: 1rem;
+}
+
+.transport {
+    width: 60%;
+    height: 5rem;
+    border: 2px solid red;
+    margin: 4rem auto auto auto;
+    border-radius: 1em;
+}
+
+.right {
+    border: solid 3px yellow;
+    height: 20em;
+    margin: 0 0 0 1em;
+}
+footer {
+    border: solid 3px black;
+    height: 8em;
+    background-color: rgb(155, 155, 155);
+}
+
