@@ -6,18 +6,21 @@ const path = require('path');
 
 //configuring the AWS environment
 AWS.config.update({
-    accessKeyId: "AKIAQMRVTQ4UPCI2NHHQ",
-    secretAccessKey: "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"
+    accessKeyId: "AKIAQMRVTQ4UHNVINY4J",
+    secretAccessKey: "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"
   });
 
 var s3 = new AWS.S3();
 var filePath = "./apple.jpg";
 
-//configuring parameters
+// upload file to aws
+// ===========================
+// //configuring parameters
 var params = {
   Bucket: 'teamawesome123',
   Body : fs.createReadStream(filePath),
-  Key : "folder/"+Date.now()+"_"+path.basename(filePath)
+  // Key : "folder/"+Date.now()+"_"+path.basename(filePath)
+  Key : "folder/"+path.basename(filePath)
 };
 
 s3.upload(params, function (err, data) {
@@ -31,8 +34,18 @@ s3.upload(params, function (err, data) {
   }
 });
 
-    // ===========================================
+// ===========================================
 
 
-    // get files from aws
-    // =======================================
+// get files from aws
+// =======================================
+var params = {
+  Bucket: "teamawesome123", 
+  Key: "folder/apple.jpg" 
+ };
+
+s3.getObject(params, function (err, data) {
+  if (err) console.log(err, err.stack); // an error occurred
+  else console.log(data);           // successful response
+
+});
