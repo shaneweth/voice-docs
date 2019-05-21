@@ -43,58 +43,71 @@ footer {
 
 }
 
-.grid-container>div {
+.grid-container > div {
     font-size: 1em;
 }
 
 header {
     border: solid 3px red;
     height: 8rem;
-    justify-items: stretch;
+}
+
+header .container {
+    display: grid;
+    justify-content: space-between;
 }
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
     width: 6em;
     height: 6em;
+    margin: 1vh 6vw 1vh 6vw;
     background-color: rgba(126, 53, 53, 0.89);
     color: #ffffff;
     cursor: pointer;
     padding: 1em;
-    margin: 1rem 40% 1rem 5%;
     border: inset .5em rgba(121, 51, 51, 0.411);
     border-radius: 50%;
     text-align: center;
     outline: none;
     font-size: 1em;
+    grid-column: 1;
+    transition: .3s
 }
 
 .collapsibleAuth {
     width: 6em;
     height: 6em;
+    margin: 1vh 6vw 1vh 6vw;
     background-color: rgba(126, 53, 53, 0.89);
     color: #ffffff;
     cursor: pointer;
     padding: 1em;
-    margin: 1rem 5% 1rem 41%;
     border: inset .5em rgba(121, 51, 51, 0.411);
     border-radius: 50%;
     text-align: center;
     outline: none;
     font-size: 1em;
+    grid-column: 4;
+    transition: .3s
+
 }
 
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active,
 .collapsible:hover {
-    background-color: rgba(133, 69, 69, 0.76);
+    background-color: rgba(167, 51, 51, 0.849);
     border: outset .5em rgba(121, 51, 51, 0.411);
+    font-size: 1.2rem;
+    transition: .5s;
 }
 .active,
 .collapsibleAuth:hover {
-    background-color: rgba(133, 69, 69, 0.76);
+    background-color: rgba(167, 51, 51, 0.849);
     border: outset .5em rgba(121, 51, 51, 0.411);
+    font-size: 1.2rem;
+    transition: .5s;
 }
 
 /* Style the collapsible content. Note: hidden by default */
@@ -102,10 +115,12 @@ header {
     padding: 2rem;
     display: none;
     position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateY(3in);
+    transition: 1s;
     overflow: hidden;
     background-color: #6aa1cef1;
-    margin: auto auto;
-    width: 20%;
     z-index: 1;
     border: black 1px solid;
     border-radius: 5px;
@@ -188,6 +203,7 @@ main {
     border: solid 3px yellow;
     height: 20em;
     margin: 0 0 0 1em;
+    padding: 2rem;
 }
 
 footer {
