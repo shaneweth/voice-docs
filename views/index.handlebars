@@ -1,6 +1,6 @@
 <div class="grid-container">
     <header class="header">
-        <button class="collapsible">Upload</button>
+        <button class="collapsible">upload</button>
         <div class="content">
             <form action="/api/projects" enctype="multipart/form-data" method="POST">
                 <div class="row">
@@ -47,6 +47,13 @@
                 </div>
             </form>
         </div>
+        <button class="collapsibleAuth">Auth</button>
+        <div class="content">
+            <form action="/api/projects" enctype="multipart/form-data" method="POST">
+            <input type="text">
+            <input type="password">
+            </form>
+        </div>        
     </header>
 
     <sidebar class="sidebar">
@@ -68,14 +75,14 @@
     </main>
 
     <right class="right">
-        <label for="site-search">search:</label>
-        <input type="search" id="site-search" name="q" aria-label="Search">
+        <h2>Project Search</h2>
+        <input type="search" id="search" name="q" label="Search">
         <button>search</button>
         <ul>
-            <li>Example Result 1</li>
-            <li>Example Result 2</li>
-            <li>Example Result 3</li>
-            <li>Example Result 4</li>
+            <li><h3>Example Result 1</h3></li>
+            <li><h3>Example Result 2</h3></li>
+            <li><h3>Example Result 3</h3></li>
+            <li><h3>Example Result 4</h3></li>
         </ul>
     </right>
 
