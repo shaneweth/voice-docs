@@ -72,7 +72,7 @@ header {
 
 }
 
-.modal .modal_content > .label {
+.modal .modal_content > h3 {
     font-size: 1.8em;
     font-weight: 200;
     margin: 1em 0 2em;
