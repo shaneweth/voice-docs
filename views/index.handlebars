@@ -50,10 +50,14 @@
         <button class="collapsibleAuth">Auth</button>
         <div class="content">
             <form action="/api/projects" enctype="multipart/form-data" method="POST">
-            <input type="text">
-            <input type="password">
+                <label for="username">User
+                    <input type="username">
+                </label>
+                <label for="password">Pass
+                <input type="password">
+                </label>
             </form>
-        </div>        
+        </div>
     </header>
 
     <sidebar class="sidebar">
@@ -79,10 +83,18 @@
         <input type="search" id="search" name="q" label="Search">
         <button>search</button>
         <ul>
-            <li><h3>Example Result 1</h3></li>
-            <li><h3>Example Result 2</h3></li>
-            <li><h3>Example Result 3</h3></li>
-            <li><h3>Example Result 4</h3></li>
+            <li>
+                <h3>Example Result 1</h3>
+            </li>
+            <li>
+                <h3>Example Result 2</h3>
+            </li>
+            <li>
+                <h3>Example Result 3</h3>
+            </li>
+            <li>
+                <h3>Example Result 4</h3>
+            </li>
         </ul>
     </right>
 
