@@ -6,7 +6,7 @@
             <input type="text" name="location" />
             <input type="text" name="oName" />
             <input type="text" name="cName" />
-            <input type="file" name="myFile" />
+            <input type="file" name="myFile"  id="uploadFile"/>
             <input type="submit" value="Upload a file" />
         </form>
     </header>
@@ -45,4 +45,8 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
+  <script>
+      var fu1 = document.getElementById("uploadFile");
+     alert("You selected " + fu1.value);
+  </script>
 <script src="/js/index.js"></script>

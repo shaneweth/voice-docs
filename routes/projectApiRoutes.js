@@ -3,6 +3,10 @@ var formidable = require("formidable");
 var util = require("util");
 var fs = require("fs-extra");
 
+const AWS = require('aws-sdk');
+const fs2 = require('fs');
+const path = require('path');
+
 module.exports = function (app) {
     app.get("/api/projects", function (req, res) {
         let query = {};
@@ -37,7 +41,7 @@ module.exports = function (app) {
 
     //     
     // });
-
+// ---------------------------------------work on post --------------------------------
 // ===========================================================================
     app.post("/api/projects", function (req, res) {
         // var localStorage;
@@ -73,7 +77,11 @@ module.exports = function (app) {
 // username
 // -> projectname
 // -->->files
+// oName = username
+// title = project name
 // --------------------------
+
+
         db.Project.create(req.body).then(function (dbProject) {
             res.json(dbProject);
         });
