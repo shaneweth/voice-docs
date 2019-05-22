@@ -57,10 +57,14 @@ header .container {
     justify-content: space-between;
 }
 
+/* *********** MODAL **************** */
+
+
 /* Style the button that is used to open and close the collapsible content */
+
 .collapsible {
-    width: 6em;
-    height: 6em;
+    width: 6.5rem;
+    height: 6.5rem;
     margin: 1vh 6vw 1vh 6vw;
     background-color: rgba(126, 53, 53, 0.89);
     color: #ffffff;
@@ -76,8 +80,8 @@ header .container {
 }
 
 .collapsibleAuth {
-    width: 6em;
-    height: 6em;
+    width: 6.5rem;
+    height: 6.5rem;
     margin: 1vh 6vw 1vh 6vw;
     background-color: rgba(126, 53, 53, 0.89);
     color: #ffffff;
@@ -99,45 +103,103 @@ header .container {
 .collapsible:hover {
     background-color: rgba(167, 51, 51, 0.849);
     border: outset .5em rgba(121, 51, 51, 0.411);
-    font-size: 1.2rem;
+    box-shadow: .6em .6em 0 rgba(85, 29, 29, 0.322);
+    text-shadow: #617f96a6;
+    font-size: 1.1rem;
     transition: .5s;
 }
 .active,
 .collapsibleAuth:hover {
     background-color: rgba(167, 51, 51, 0.849);
     border: outset .5em rgba(121, 51, 51, 0.411);
-    font-size: 1.2rem;
+    box-shadow: -0.6em .6em 0  rgba(85, 29, 29, 0.322);
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.253);
+    font-size: 1.1rem;
     transition: .5s;
 }
 
 /* Style the collapsible content. Note: hidden by default */
 .content {
     padding: 2rem;
+    margin: 10vh auto;
     display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translateY(3in);
-    transition: 1s;
+    width: 55%;
     overflow: hidden;
     background-color: #6aa1cef1;
     z-index: 1;
-    border: black 1px solid;
+    border: black 3px ridge;
     border-radius: 5px;
-
+    grid-column: 2 / span 2;
+    -webkit-transition: opacity 600ms, display 600ms;
+    transition: opacity 600ms, display 600ms;
 }
 
 .content h3 {
-    margin: 1rem;
+    margin: 1.2rem;
+    font-weight: 100;
 }
 
+label {
+    display: inline-block;
+    width: 11rem;
+    text-align: left;
+}
+
+.submitBtn {
+    width: 10rem;
+    height: 4rem;
+    margin: 2vh 5vw 2vh 5vw;
+    background-color: rgba(61, 124, 85, 0.993);
+    color: #ffffff;
+    cursor: pointer;
+    padding: 1em;
+    border: inset .5em rgba(82, 37, 37, 0.425);
+    border-radius: 1rem;
+    text-align: center;
+    outline: none;
+    font-size: .6em;
+    transition: .3s
+}
+
+.submitBtn:hover {
+    background-color: rgba(167, 51, 51, 0.849);
+    border: outset .5em rgba(121, 51, 51, 0.411);
+    font-size: .7rem;
+    transition: .5s;
+}
+
+.close_modal {
+    position: relative;
+    top: 0;
+    left: 95%;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: rgba(153, 1, 1, 0.884);
+    color: whitesmoke;
+    border: 5px rgba(0, 0, 0, 0.288) solid;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0;
+
+}
+
+#fileUpload {
+    background-color: #acc6da;
+    border: #617f96a6 2px inset;
+    border-radius: 5px;
+}
+
+
+/* END OF MODAL */
+
+/* SIDEBAR - NOTEPAD */
 .sidebar {
     border: solid 3px rgb(0, 0, 255);
     height: 60%;
     width: 10vw;
     background-color: whitesmoke;
     border-radius: .5em;
-    box-shadow: .8em .8em 0 rgba(0, 0, 0, 0.1);
+    box-shadow: .6em .6em 0 rgba(0, 0, 0, 0.1);
     padding: 1rem 2rem 1rem 5rem;
     background: -webkit-gradient(linear, 0 0, 0 100%, from(#c7dae4), color-stop(4%, #ffffff)) 0 .3em;
     background-size: 100% 3rem;

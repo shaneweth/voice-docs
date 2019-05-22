@@ -22,10 +22,10 @@ for (j = 0; j < collAuth.length; j++) {
   collAuth[j].addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
-    if (content.style.display === "block") {
+    if (content.style.display === "grid") {
       content.style.display = "none";
     } else {
-      content.style.display = "block";
+      content.style.display = "grid";
     }
   });
 }
