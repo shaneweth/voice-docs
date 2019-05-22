@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
     Project.associate = function(models) {
         Project.belongsTo(models.User, {
             foreignKey: {
-                allowNull: false,
+                allowNull: true,
             },
         });
     }

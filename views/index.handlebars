@@ -1,15 +1,63 @@
 <div class="grid-container">
     <header class="header">
-        <form action="/api/projects" enctype="multipart/form-data" method="POST">
-            <input type="text" name="description" />
-            <input type="text" name="category" />
-            <input type="text" name="location" />
-            <input type="text" name="oName" />
-            <input type="text" name="cName" />
-            <input type="file" name="myFile" />
-            <input type="submit" value="Upload a file" />
-        </form>
+        <div class="container">
+            <button class="collapsible">upload</button>
+            <div class="content">
+                <div class="close_modal">X</div>
+                    <form action="/api/projects" enctype="multipart/form-data" method="POST">
+                        <div class="row">
+                            <label for="description">
+                                <h3>description</h3>
+                            </label>
+                            <input type="text" name="description" />
+                        </div>
+                        <div class="row">
+                            <label for="description">
+                                <h3>category</h3>
+                            </label>
+                            <input type="text" name="category" />
+                        </div>
+                        <div class="row">
+                            <label for="location">
+                                <h3>location</h3>
+                            </label>
+                            <input type="text" name="location" />
+                        </div>
+                        <div class="row">
+                            <label for="oName">
+                                <h3>owner</h3>
+                            </label>
+                            <input type="text" name="oName" />
+                        </div>
+                        <div class="row">
+                            <label for="cName">
+                                <h3>collaborator</h3>
+                            </label>
+                            <input type="text" name="cName" />
+                        </div>
+                        <div class="row" id="fileUpload">
+                            <br>
+                            <input type="file" name="myFile" />
+                            <br>
+                            <hr>
+                            <input class="submitBtn" type="submit" value="send ->" />
+                        </div>
+                    </form>
+            </div>
+            <button class="collapsibleAuth">login</button>
+            <div class="content">
+                <form action="/api/projects" enctype="multipart/form-data" method="POST">
+                    <label for="username">User
+                        <input type="username">
+                    </label>
+                    <label for="password">Pass
+                        <input type="password">
+                    </label>
+                </form>
+            </div>
+        </div>
     </header>
+
     <sidebar class="sidebar">
         <p contenteditable="true">notes</p>
     </sidebar>
@@ -27,22 +75,30 @@
         <div class="transport"></div>
 
     </main>
-    
+
     <right class="right">
-        <label for="site-search">search:</label>
-        <input type="search" id="site-search" name="q" aria-label="Search">
+        <h2>Project Search</h2>
+        <input type="search" id="search" name="q" label="Search">
         <button>search</button>
         <ul>
-            <li>Example Result 1</li>
-            <li>Example Result 2</li>
-            <li>Example Result 3</li>
-            <li>Example Result 4</li>
+            <li>
+                <h3>Example Result 1</h3>
+            </li>
+            <li>
+                <h3>Example Result 2</h3>
+            </li>
+            <li>
+                <h3>Example Result 3</h3>
+            </li>
+            <li>
+                <h3>Example Result 4</h3>
+            </li>
         </ul>
     </right>
 
     <footer class="footer">
     </footer>
 
-<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-<script src="/js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="/js/index.js"></script>
