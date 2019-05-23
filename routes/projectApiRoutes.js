@@ -1,7 +1,11 @@
+require("express-fileupload");
 const db = require("../models");
-var formidable = require("formidable");
-var util = require("util");
-var fs = require("fs-extra");
+const aws = require('aws-sdk');
+
+aws.config.update({
+    accessKeyId: "AKIAIYSEHHRUPS64F53A",
+    secretAccessKey: "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"
+});
 
 module.exports = function (app) {
     app.get("/api/projects", function (req, res) {
@@ -18,10 +22,13 @@ module.exports = function (app) {
         });
     });
 
-    app.get("/api/projects/:title", function (req, res) {
+    app.get("/api/projects/:title/:oName", function (req, res) {
+        const s3 = new aws.S3();
+
         db.Project.findOne({
             where: {
-                title: req.params.title
+                title: req.params.title,
+                oName: req.params.oName,
             },
             include: [db.User]
         }).then(function (dbProject) {
@@ -29,40 +36,40 @@ module.exports = function (app) {
         });
     });
 
-
     app.post("/api/projects", function (req, res) {
-        // var localStorage;
-        var form = new formidable.IncomingForm();
-        form.uploadDir = __dirname + "/";
-        
-        form.parse(req, function (err, fields, files) {
-            console.log(req.body)
-            // writes the json to a page
-            res.writeHead(200, { 'content-type': 'text/plain' });
-            res.write('received upload:\n\n');
-            res.end(util.inspect({ fields: fields, files: files }));
-        })
-        // ****IMPORTANT!! SET UP FALSY TEST FOR INPUT
-        form.on("end", function (fields, files) {
-            // temp loc of uploaded file
-            var temp_path = this.openedFiles[0].path;
-            // file name of uploaded file
-            var file_name = this.openedFiles[0].name;
-            // new local file loc
-            var new_location = "/Users/shane/git/voice-docs/public/audio/";
-            fs.copy(temp_path, new_location + file_name, function (err) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log("yessirrr!!")
-                }
-            });
-        });
-        db.Project.create(req.body).then(function (dbProject) {
-            res.json(dbProject);
-        });
-        return;
+        const s3 = new aws.S3();
 
+        console.log(req.files[0]);
+
+        let file = req.files[0];
+        let buffer = file.buffer;
+
+        let params = {
+            Bucket: 'teamawesome123',
+            ACL: 'public-read',
+            Body: buffer,
+            Key: req.body.oName + "/" + req.body.title + "/" + file.originalname,
+        }
+
+        s3.upload(params, function (err, data) {
+            if (err) throw err;
+            if (data) {
+                console.log(data);
+                let newProject = {
+                    title: req.body.title,
+                    description: req.body.description,
+                    category: req.body.category,
+                    location: req.body.location,
+                    oName: req.body.oName,
+                    UserUsername: req.body.oName,
+                    mainFile: data.Location,
+                }
+
+                db.Project.create(newProject).then(function (dbProject) {
+                    res.json(dbProject);
+                });
+            }
+        });
     });
 
     app.delete("/api/projects/:title", function (req, res) {
