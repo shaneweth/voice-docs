@@ -29,29 +29,20 @@ module.exports = function (app) {
         });
     });
 
-    // app.post("/api/projects", function (req, res) {
-
-    //     //ADD CODE FOR FILE POSITING HERE
-    //     //it will use req.files
-
-
-    //     
-    // });
-
 
     app.post("/api/projects", function (req, res) {
         // var localStorage;
         var form = new formidable.IncomingForm();
-
         form.uploadDir = __dirname + "/";
-
-        form.parse(req, function (err, field, file) {
+        
+        form.parse(req, function (err, fields, files) {
+            console.log(req.body)
             // writes the json to a page
             res.writeHead(200, { 'content-type': 'text/plain' });
             res.write('received upload:\n\n');
-            res.end(util.inspect({ file: file }));
+            res.end(util.inspect({ fields: fields, files: files }));
         })
-
+        // ****IMPORTANT!! SET UP FALSY TEST FOR INPUT
         form.on("end", function (fields, files) {
             // temp loc of uploaded file
             var temp_path = this.openedFiles[0].path;
@@ -59,17 +50,14 @@ module.exports = function (app) {
             var file_name = this.openedFiles[0].name;
             // new local file loc
             var new_location = "/Users/shane/git/voice-docs/public/audio/";
-
             fs.copy(temp_path, new_location + file_name, function (err) {
                 if (err) {
                     console.log(err);
                 } else {
                     console.log("yessirrr!!")
-                    console.log(new_location);
                 }
             });
         });
-
         db.Project.create(req.body).then(function (dbProject) {
             res.json(dbProject);
         });
