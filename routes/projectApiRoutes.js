@@ -53,12 +53,25 @@ module.exports = function (app) {
             Key: req.body.oName + "/" + req.body.title + "/" + file.originalname,
         }
 
-        s3.upload(params, function(err, data) {
-            if(err) throw err;
-            if(data) {
-                res.json(data);
+        s3.upload(params, function (err, data) {
+            if (err) throw err;
+            if (data) {
+                console.log(data);
             }
         })
+
+        let newProject = {
+            title: req.body.title,
+            description: req.body.description,
+            category: req.body.category,
+            location: req.body.location,
+            oName: req.body.oName,
+            UserUsername: req.body.oName,
+        }
+
+        db.Project.create(newProject).then(function (dbProject) {
+            res.json(dbProject);
+        });
     });
 
     app.delete("/api/projects/:title", function (req, res) {
