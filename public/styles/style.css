@@ -34,10 +34,10 @@ footer {
     min-height: 100%;
     grid-template:
         " header header header header "
-        " sidebar main main right "
-        " sidebar main main right "
-        " sidebar main main right "
-        " footer footer footer footer ";
+        " . main main right "
+        " . main main right "
+        " . sidebar sidebar . "
+        " . sidebar sidebar . ";
     grid-template-columns: 1fr 2fr 2fr 1fr;
     grid-gap: .3em;
 
@@ -194,13 +194,13 @@ label {
 
 /* SIDEBAR - NOTEPAD */
 .sidebar {
-    border: solid 3px rgb(0, 0, 255);
-    height: 60%;
-    width: 10vw;
+    border: rgba(36, 36, 36, 0.705) 1px solid;
+    height: 30vh;
+    width: 60vw;
     background-color: whitesmoke;
     border-radius: .5em;
     box-shadow: .6em .6em 0 rgba(0, 0, 0, 0.1);
-    padding: 1rem 2rem 1rem 5rem;
+    padding: 1rem 0 1rem 5rem;
     background: -webkit-gradient(linear, 0 0, 0 100%, from(#c7dae4), color-stop(4%, #ffffff)) 0 .3em;
     background-size: 100% 3rem;
     position: relative;
@@ -215,6 +215,7 @@ label {
 .sidebar:before {
     content: "";
     position: absolute;
+    height: 30vh;
     width: .3em;
     top: 0;
     left: 2.8em;
@@ -225,14 +226,13 @@ label {
 
 main {
     border: solid 3px green;
-    height: 82vh;
-    z-index: -1;
+    height: 80vh;
 }
 
 .flex-container {
-    display: flex;
+    display: grid;
     justify-content: space-around;
-    size: 60%;
+    size: 70%;
 }
 
 .leftCircle {
@@ -240,7 +240,7 @@ main {
     height: 32rem;
     border: 1px solid black;
     border-radius: 50%;
-    display: inline-flex;
+    grid-column: 2;
     margin: 1rem;
 }
 
@@ -248,17 +248,142 @@ main {
     width: 32rem;
     height: 32rem;
     border: 1px solid black;
-    border-radius: 50%;
-    display: inline-flex;
+    border-radius: 50%; 
+    grid-column: 3;
     margin: 1rem;
 }
 
 .transport {
     width: 60%;
     height: 5rem;
-    border: 2px solid red;
-    margin: 20vh auto auto auto;
+    margin: 10vh auto 10vh auto;
     border-radius: 1em;
+    grid-row: 4;
+    grid-column: 2 / span 2;
+}
+
+.player {
+    max-width: 46rem;
+    border: 5px inset rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 0;
+    z-index: 1;
+}
+
+.player_button {
+    background: none;
+    border: 0;
+    line-height: 1;
+    color: white;
+    text-align: center;
+    outline: 0;
+    padding: 0;
+    cursor: pointer;
+    max-width: 50px;
+
+}
+
+.player_button:focus {
+    border-color: #520d0d93;
+}
+
+.player_slider {
+    width: .8rem;
+    height: 2rem;
+}
+
+.player_controls {
+    display: flex;
+    position: relative;
+    padding: 2px;
+    bottom: 0;
+    width: 100%;
+    /* transform: translateY(100%) translateY(-5px);
+    transition: all .3s; */
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.player_controls > * {
+    flex: 1;
+}
+
+.progress {
+    flex: 10;
+    position: relative;
+    margin: 1px;
+    display: flex;
+    flex-basis: 100%;
+    height: 10px;
+    transition: height 0.3s;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: ew-resize;
+}
+
+.progress_filled {
+    /* width: 50%; */
+    background-color: #458ca8;
+    flex: 0;
+    flex-basis: 0%;
+
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    background: transparent;
+    width: 100%;
+    margin: 0 5px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0, ), 0 0 1px rgba(13, 13, 13, 0);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 1.3px;
+    border: 0.2px solid rgba(1, 1, 1, 0);
+}
+
+input[type=range]::-webkit-slider-thumb {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #a55252;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -1px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #b1c3ce;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+    background: #ffffff;
+    border-radius: 1.3px;
+    border: 0.2px solid rgba(1, 1, 1, 0);
+}
+
+input[type=range]::-moz-range-thumb {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #34759b;
+    cursor: pointer;
 }
 
 .right {
