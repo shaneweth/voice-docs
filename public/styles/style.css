@@ -93,8 +93,10 @@ header .container {
     outline: none;
     font-size: 1em;
     grid-column: 4;
-    transition: .3s
+    animation: authDown 1s ease-out;
 }
+
+
 
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -124,15 +126,27 @@ header .container {
     margin: auto auto;
     display: none;
     position: absolute;
-    top: 5vh;
-    left: 45vw;
+    top: 1vh;
+    left: 65%;
     width: 25vw;
     overflow: hidden;
-    background-color: #6aa1cef1;
+    background-color: #6aa1ce;
     z-index: 1;
     border: black 3px ridge;
     border-radius: 5px;
+    animation: authUp 1s; /* IE 10+, Fx 29+ */
+    animation-timing-function: ease-in-out;
+
 }
+
+@keyframes authUp  {
+    0% {
+      top: -15vh;
+    }
+    100% {
+      top: 1vh;
+    }
+  }
 .content {
     padding: 2rem;
     margin: 10vh auto;
