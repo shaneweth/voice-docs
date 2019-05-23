@@ -109,6 +109,5 @@ $(".project-option").on("click", function (e) {
   console.log(text);
   $.get("api/projects/" + text, function (data) {
     $(".player_video").attr("src", data.mainFile);
-    console.log(data);
   });
 })
