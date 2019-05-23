@@ -45,16 +45,16 @@
                 </form>
             </div>
             <button class="collapsibleAuth">login</button>
-            <div class="content">
-                <form action="/api/projects" enctype="multipart/form-data" method="POST">
-                    <label for="username">User
-                        <input type="username">
-                    </label>
-                    <label for="password">Pass
-                        <input type="password">
-                    </label>
-                </form>
-            </div>
+                <div class="contentAuth">
+                    <form action="/api/projects" enctype="multipart/form-data" method="POST">
+                        <label for="username">User
+                            <input type="username">
+                        </label>
+                        <label for="password">Pass
+                            <input type="password">
+                        </label>
+                    </form>
+                </div>
         </div>
     </header>
 
@@ -71,7 +71,8 @@
                 </div>
                 <div class="transport">
                     <div class="player">
-                        <audio class="player_video viewer" src="../public/audio/beat for apfm.mp3"></audio>
+                        <audio class="player_video viewer" src="../public/audio/beat for apfm.mp3"
+                            type="audio/mpeg"></audio>
                         <div class="player_controls">
                             <div class="progress">
                                 <div class="progress_filled"></div>
