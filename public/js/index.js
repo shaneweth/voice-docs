@@ -31,6 +31,7 @@ for (j = 0; j < collAuth.length; j++) {
   });
 }
 
+//AUDIO PLAYER
 // Elements
 
 const player = document.querySelector(".player");

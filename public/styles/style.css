@@ -43,7 +43,7 @@ footer {
 
 }
 
-.grid-container > div {
+.grid-container>div {
     font-size: 1em;
 }
 
@@ -94,7 +94,6 @@ header .container {
     font-size: 1em;
     grid-column: 4;
     transition: .3s
-
 }
 
 
@@ -108,11 +107,12 @@ header .container {
     font-size: 1.1rem;
     transition: .5s;
 }
+
 .active,
 .collapsibleAuth:hover {
     background-color: rgba(167, 51, 51, 0.849);
     border: outset .5em rgba(121, 51, 51, 0.411);
-    box-shadow: -0.6em .6em 0  rgba(85, 29, 29, 0.322);
+    box-shadow: -0.6em .6em 0 rgba(85, 29, 29, 0.322);
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.253);
     font-size: 1.1rem;
     transition: .5s;
@@ -227,12 +227,14 @@ label {
 main {
     border: solid 3px green;
     height: 80vh;
+
 }
 
-.flex-container {
+.container {
     display: grid;
-    justify-content: space-around;
-    size: 70%;
+    grid-gap: 1px;
+    justify-content: space-evenly;
+    
 }
 
 .leftCircle {
@@ -240,26 +242,27 @@ main {
     height: 30rem;
     border: 1px solid black;
     border-radius: 50%;
-    grid-column: 2;
-    margin: 1rem;
+    grid-column: 1;
+    margin: 5vh 3vw 0 3vw;
 }
+
 
 .rightCircle {
     width: 30rem;
     height: 30rem;
     border: 1px solid black;
-    border-radius: 50%; 
+    border-radius: 50%;
     grid-column: 3;
-    margin: 1rem;
+    margin: 5vh 3vw 0 3vw;
 }
 
 .transport {
-    width: 60%;
+    width: 28vw;
     height: 5rem;
-    margin: 10vh auto 10vh auto;
+    margin: 15vh auto 10vh auto;
     border-radius: 1em;
-    grid-row: 4;
-    grid-column: 2 / span 2;
+    grid-column: 1 / 4;
+    text-align: center;
 }
 
 .player {
@@ -301,13 +304,11 @@ main {
     padding: 2px;
     bottom: 0;
     width: 100%;
-    /* transform: translateY(100%) translateY(-5px);
-    transition: all .3s; */
     flex-wrap: wrap;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-.player_controls > * {
+.player_controls>* {
     flex: 1;
 }
 
@@ -317,8 +318,7 @@ main {
     margin: 1px;
     display: flex;
     flex-basis: 100%;
-    height: 10px;
-    transition: height 0.3s;
+    height: 1rem;
     background: rgba(0, 0, 0, 0.5);
     cursor: ew-resize;
 }
@@ -391,11 +391,6 @@ input[type=range]::-moz-range-thumb {
     height: 20em;
     margin: 0 0 0 1em;
     padding: 2rem;
+    text-align: center
 }
 
-footer {
-    position: relative;
-    border: solid 3px black;
-    height: 8rem;
-    background-color: rgb(155, 155, 155);
-}
