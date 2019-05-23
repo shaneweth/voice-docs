@@ -9,6 +9,7 @@ module.exports = function(sequelize, DataTypes) {
         location: DataTypes.JSON,
         oName: DataTypes.STRING,
         cNames: DataTypes.JSON,
+        mainFile: DataTypes.STRING,
     });
 
     Project.associate = function(models) {
