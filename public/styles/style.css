@@ -195,9 +195,9 @@ label {
 /* SIDEBAR - NOTEPAD */
 .sidebar {
     border: rgba(36, 36, 36, 0.705) 1px solid;
-    height: 30vh;
+    height: 20vh;
     width: 25vw;
-    background-color: whitesmoke;
+    background-image: url("../media/spiral.png");
     border-radius: .5em;
     box-shadow: .6em .6em 0 rgba(0, 0, 0, 0.1);
     padding: 1rem 0 1rem 5rem;
@@ -215,7 +215,7 @@ label {
 .sidebar:before {
     content: "";
     position: absolute;
-    height: 30vh;
+    height: 20vh;
     width: .3em;
     top: 0;
     left: 2.8em;
@@ -233,8 +233,9 @@ main {
 .container {
     display: grid;
     grid-gap: 1px;
+    max-width: 80rem;
+    margin: auto auto;
     justify-content: space-evenly;
-    
 }
 
 .leftCircle {
@@ -387,9 +388,10 @@ input[type=range]::-moz-range-thumb {
 }
 
 .right {
-    border: solid 3px yellow;
-    height: 20em;
-    margin: 0 0 0 1em;
+    border: solid 1px yellow;
+    height: 20vh;
+    width: 25vw;
+    margin: 0 0 0 5vw;
     padding: 2rem;
     text-align: center
 }
