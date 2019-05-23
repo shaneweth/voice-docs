@@ -106,8 +106,9 @@ progress.addEventListener("mouseup", () => mousedown = false);
 
 $(".project-option").on("click", function (e) {
   let text = $(this).text();
+  let username = "lmh96";
   console.log(text);
-  $.get("api/projects/" + text, function (data) {
+  $.get("api/projects/" + text + "/" + username, function (data) {
     $(".player_video").attr("src", data.mainFile);
   });
 })

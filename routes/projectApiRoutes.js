@@ -22,27 +22,16 @@ module.exports = function (app) {
         });
     });
 
-    app.get("/api/projects/:title", function (req, res) {
+    app.get("/api/projects/:title/:oName", function (req, res) {
         const s3 = new aws.S3();
 
         db.Project.findOne({
             where: {
-                title: req.params.title
+                title: req.params.title,
+                oName: req.params.oName,
             },
             include: [db.User]
         }).then(function (dbProject) {
-
-            // let params = {
-            //     Bucket: "teamawesome123",
-            //     Key: dbProject.oName + "/" + dbProject.title + "/" + dbProject.mainFile,
-            // };
-
-            // res.attachment(params.Key);
-            // let fs = s3.getObject(params).createReadStream();
-            // fs.pipe(res);
-
-            // console.log(res);
-
             res.json(dbProject);
         });
     });
