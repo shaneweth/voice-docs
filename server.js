@@ -1,11 +1,8 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
-var fileupload = require("express-fileupload");
-var fs = require("fs");
 var bodyParser = require("body-parser");
 var multer = require("multer");
-var multipart = require("connect-multiparty")
 
 var db = require("./models");
 

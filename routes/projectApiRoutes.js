@@ -1,12 +1,7 @@
 require("express-fileupload");
 const db = require("../models");
-var util = require("util");
-var fs = require("fs-extra");
-const path = require('path');
 
 const aws = require('aws-sdk');
-const multipart = require("connect-multiparty");
-const multipartyMiddleware = multipart();
 
 aws.config.update({
     accessKeyId: "AKIAIYSEHHRUPS64F53A",
