@@ -96,7 +96,7 @@ module.exports = function (app) {
                     location: req.body.location,
                     oName: req.body.oName,
                     Username: req.body.oName,
-                    // mainFile: data.Location,
+                    mainFile: data.Location,
                 }
 
                 db.Project.create(newProject).then(function (dbProject) {
