@@ -62,7 +62,7 @@ header .container {
 
 /* Style the button that is used to open and close the collapsible content */
 
-/* .collapsible {
+.collapsible {
     width: 6.5rem;
     height: 6.5rem;
     margin: 1vh 6vw 1vh 6vw;
@@ -77,7 +77,7 @@ header .container {
     font-size: 1em;
     grid-column: 1;
     transition: .3s
-} */
+}
 
 .collapsibleAuth {
     width: 6.5rem;
@@ -93,14 +93,12 @@ header .container {
     outline: none;
     font-size: 1em;
     grid-column: 4;
-    animation: authDown 1s ease-out;
+    transition: .3s
 }
 
 
-
-
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-/* .active,
+.active,
 .collapsible:hover {
     background-color: rgba(167, 51, 51, 0.849);
     border: outset .5em rgba(121, 51, 51, 0.411);
@@ -108,9 +106,9 @@ header .container {
     text-shadow: #617f96a6;
     font-size: 1.1rem;
     transition: .5s;
-} */
+}
 
-/* .active, */
+.active,
 .collapsibleAuth:hover {
     background-color: rgba(167, 51, 51, 0.849);
     border: outset .5em rgba(121, 51, 51, 0.411);
@@ -121,43 +119,19 @@ header .container {
 }
 
 /* Style the collapsible content. Note: hidden by default */
-.contentAuth {
-    padding: 2rem;
-    margin: auto auto;
-    display: none;
-    position: absolute;
-    top: 1vh;
-    left: 65%;
-    width: 25vw;
-    overflow: hidden;
-    background-color: #6aa1ce;
-    z-index: 1;
-    border: black 3px ridge;
-    border-radius: 5px;
-    animation: authUp 1s; /* IE 10+, Fx 29+ */
-    animation-timing-function: ease-in-out;
-
-}
-
-@keyframes authUp  {
-    0% {
-      top: -15vh;
-    }
-    100% {
-      top: 1vh;
-    }
-  }
 .content {
     padding: 2rem;
     margin: 10vh auto;
     display: none;
-    position: relative;
     width: 55%;
     overflow: hidden;
     background-color: #6aa1cef1;
     z-index: 1;
     border: black 3px ridge;
     border-radius: 5px;
+    grid-column: 2 / span 2;
+    -webkit-transition: opacity 600ms, display 600ms;
+    transition: opacity 600ms, display 600ms;
 }
 
 .content h3 {
@@ -221,9 +195,9 @@ label {
 /* SIDEBAR - NOTEPAD */
 .sidebar {
     border: rgba(36, 36, 36, 0.705) 1px solid;
-    height: 20vh;
+    height: 30vh;
     width: 25vw;
-    background-image: url("../media/spiral.png");
+    background-color: whitesmoke;
     border-radius: .5em;
     box-shadow: .6em .6em 0 rgba(0, 0, 0, 0.1);
     padding: 1rem 0 1rem 5rem;
@@ -241,7 +215,7 @@ label {
 .sidebar:before {
     content: "";
     position: absolute;
-    height: 20vh;
+    height: 30vh;
     width: .3em;
     top: 0;
     left: 2.8em;
@@ -259,9 +233,8 @@ main {
 .container {
     display: grid;
     grid-gap: 1px;
-    max-width: 80rem;
-    margin: auto auto;
     justify-content: space-evenly;
+    
 }
 
 .leftCircle {
@@ -414,10 +387,9 @@ input[type=range]::-moz-range-thumb {
 }
 
 .right {
-    border: solid 1px yellow;
-    height: 20vh;
-    width: 25vw;
-    margin: 0 0 0 5vw;
+    border: solid 3px yellow;
+    height: 20em;
+    margin: 0 0 0 1em;
     padding: 2rem;
     text-align: center
 }

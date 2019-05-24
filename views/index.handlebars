@@ -51,16 +51,14 @@
         </form>
       </div>
       <button class="collapsibleAuth">login</button>
-      <div class="contentAuth">
+      <div class="content">
         <form action="/api/projects" enctype="multipart/form-data" method="POST">
           <label for="username">User
-            <input id="username-box" type="username">
+            <input type="username">
           </label>
           <label for="password">Pass
-            <input id="password-box" type="password">
+            <input type="password">
           </label>
-          <button id="submit" class="submit">Sign up</button>
-
         </form>
       </div>
     </div>
@@ -79,7 +77,7 @@
         </div>
         <div class="transport">
           <div class="player">
-            <audio class="player_video viewer" src="../public/audio/beat for apfm.mp3" type="audio/mpeg"></audio>
+            <audio class="player_video viewer" src=""></audio>
             <div class="player_controls">
               <div class="progress">
                 <div class="progress_filled"></div>
@@ -92,33 +90,38 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+</div>
+</div>
 
-  </main>
+</div>
+</main>
 
-  <right class="right">
-    <h2>Project Search</h2>
-    <input type="search" id="search" name="q" label="Search">
-    <button>search</button>
-    <ul>
-      <li>
-        <h3><a class="project-option">testProject</a></h3>
-      </li>
-      <li>
-        <h3><a class="project-option">testProject2</a></h3>
-      </li>
-      <li>
-        <h3>Example Result 3</h3>
-      </li>
-      <li>
-        <h3>Example Result 4</h3>
-      </li>
-    </ul>
-  </right>
+<right class="right">
+  <h2>Project Search</h2>
+  <input type="search" id="search" name="q" label="Search">
+  <button>search</button>
+  <ul>
+    <li>
+      <h3><a class="project-option">testProject</a></h3>
+    </li>
+    <li>
+      <h3><a class="project-option">testProject2</a></h3>
+    </li>
+    <li>
+      <h3>Example Result 3</h3>
+    </li>
+    <li>
+      <h3>Example Result 4</h3>
+    </li>
+  </ul>
+</right>
 
-  <footer class="footer">
-  </footer>
+<footer class="footer">
+</footer>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
-  <script src="/js/index.js"></script>
-  <script src="/js/auth.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script src="/js/index.js"></script>
+<script src="/js/auth.js"></script>
