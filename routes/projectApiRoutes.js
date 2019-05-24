@@ -28,31 +28,7 @@ module.exports = function (app) {
         });
     });
     // --------------------------
-    router.get('/', function (req, res) {
-        res.redirect('/index');
-      });
-      
-      
-      // Index Page (render all burgers)
-      router.get('/index', function (req, res) {
-        const s3 = new aws.S3();
-        var params = {
-            Bucket: "teamawesome123" 
-            
-           };
-           s3.listObjects(params, function(err, data) {
-             if (err) console.log(err, err.stack); // an error occurred
-             else     console.log(data);           // successful response
-          
-          console.log(data.length);
-            
-          var hbsObject = { recordings: data };
-          res.render('index', hbsObject);
-           });
-       
-          
-      
-      });
+
 
     // ------------------------
 
