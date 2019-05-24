@@ -1,12 +1,11 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
-var formidable = require("formidable");
-var fs = require("fs");
 var bodyParser = require("body-parser");
-
+var multer = require("multer");
 
 var db = require("./models");
+
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -17,6 +16,8 @@ app.use(express.json());
 app.use(express.static("public"));
 // bodyParser for upload
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+app.use(multer({uploadDir: "./uploads"}).any());
 
 // Handlebars
 app.engine(
@@ -50,27 +51,5 @@ db.sequelize.sync(syncOptions).then(function() {
     );
   });
 });
-
-// // Set Storage
-// var storage = multer.diskStorage({
-//   destination: function (req, file, cb) {
-//     cb(null, "uploads")
-//   },
-//   filename: function (req, file, cb) {
-//     cb(null, file.fieldname + "-" + Date.now())
-//   }
-// })
-
-// var upload = multer({ storage: storage })
-
-// app.post("/uploads", upload.single("myFile"), (req, res, next) => {
-//   const file = req.file
-//   if (!file) {
-//     const error = new Error("Please Upload Stuff, fool")
-//     error.httpStatusCode = 400
-//     return next(error)
-//   }
-//   res.send(file)
-// })
 
 module.exports = app;
