@@ -2,6 +2,12 @@ require("express-fileupload");
 const db = require("../models");
 const aws = require('aws-sdk');
 
+// Node Dependencies
+const express = require('express');
+const router = express.Router();
+
+
+
 aws.config.update({
     accessKeyId: "AKIAIYSEHHRUPS64F53A",
     secretAccessKey: "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"
@@ -21,6 +27,34 @@ module.exports = function (app) {
             res.json(dbProject);
         });
     });
+    // --------------------------
+    router.get('/', function (req, res) {
+        res.redirect('/index');
+      });
+      
+      
+      // Index Page (render all burgers)
+      router.get('/index', function (req, res) {
+        const s3 = new aws.S3();
+        var params = {
+            Bucket: "teamawesome123" 
+            
+           };
+           s3.listObjects(params, function(err, data) {
+             if (err) console.log(err, err.stack); // an error occurred
+             else     console.log(data);           // successful response
+          
+          console.log(data.length);
+            
+          var hbsObject = { recordings: data };
+          res.render('index', hbsObject);
+           });
+       
+          
+      
+      });
+
+    // ------------------------
 
     app.get("/api/projects/:title/:oName", function (req, res) {
         const s3 = new aws.S3();
@@ -61,8 +95,8 @@ module.exports = function (app) {
                     category: req.body.category,
                     location: req.body.location,
                     oName: req.body.oName,
-                    UserUsername: req.body.oName,
-                    mainFile: data.Location,
+                    Username: req.body.oName,
+                    // mainFile: data.Location,
                 }
 
                 db.Project.create(newProject).then(function (dbProject) {
