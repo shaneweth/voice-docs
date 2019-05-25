@@ -62,22 +62,6 @@ header .container {
 
 /* Style the button that is used to open and close the collapsible content */
 
-/* .collapsible {
-    width: 6.5rem;
-    height: 6.5rem;
-    margin: 1vh 6vw 1vh 6vw;
-    background-color: rgba(126, 53, 53, 0.89);
-    color: #ffffff;
-    cursor: pointer;
-    padding: 1em;
-    border: inset .5em rgba(121, 51, 51, 0.411);
-    border-radius: 50%;
-    text-align: center;
-    outline: none;
-    font-size: 1em;
-    grid-column: 1;
-    transition: .3s
-} */
 
 .collapsibleAuth {
     width: 6.5rem;
@@ -100,15 +84,7 @@ header .container {
 
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-/* .active,
-.collapsible:hover {
-    background-color: rgba(167, 51, 51, 0.849);
-    border: outset .5em rgba(121, 51, 51, 0.411);
-    box-shadow: .6em .6em 0 rgba(85, 29, 29, 0.322);
-    text-shadow: #617f96a6;
-    font-size: 1.1rem;
-    transition: .5s;
-} */
+
 
 /* .active, */
 .collapsibleAuth:hover {
@@ -150,11 +126,11 @@ header .container {
 .content {
     padding: 2rem;
     margin: 10vh auto;
-    display: none;
+    /* display: none; */
     position: relative;
     width: 55%;
     overflow: hidden;
-    background-color: #6aa1cef1;
+    background-image: url("../media/spiral.png");
     z-index: 1;
     border: black 3px ridge;
     border-radius: 5px;
@@ -172,8 +148,8 @@ label {
 }
 
 .submitBtn {
-    width: 10rem;
-    height: 4rem;
+    width: 2rem;
+    height: 2rem;
     margin: 2vh 5vw 2vh 5vw;
     background-color: rgba(61, 124, 85, 0.993);
     color: #ffffff;
@@ -213,6 +189,7 @@ label {
     background-color: #acc6da;
     border: #617f96a6 2px inset;
     border-radius: 5px;
+    width: 10vw;
 }
 
 
@@ -252,7 +229,9 @@ label {
 
 main {
     border: solid 3px green;
-    height: 80vh;
+    height: 65vh;
+    /* width: 100vw; */
+
 
 }
 
@@ -265,8 +244,8 @@ main {
 }
 
 .leftCircle {
-    width: 30rem;
-    height: 30rem;
+    width: 25rem;
+    height: 25rem;
     border: 1px solid black;
     border-radius: 50%;
     grid-column: 1;
@@ -275,8 +254,8 @@ main {
 
 
 .rightCircle {
-    width: 30rem;
-    height: 30rem;
+    width: 25rem;
+    height: 25rem;
     border: 1px solid black;
     border-radius: 50%;
     grid-column: 3;
@@ -286,7 +265,7 @@ main {
 .transport {
     width: 28vw;
     height: 5rem;
-    margin: 15vh auto 10vh auto;
+    margin: 10vh auto;
     border-radius: 1em;
     grid-column: 1 / 4;
     text-align: center;
