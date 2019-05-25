@@ -40,10 +40,10 @@ footer {
     display: grid;
     grid-template:
         " header header header header "
-        " . main main . "
-        " . main main . "
-        " . sidebar right . ";
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+        " . main main right "
+        " . main main right "
+        " . sidebar sidebar . ";
+    grid-template-columns: 1fr 1.5fr 1.5fr 1fr;
     grid-gap: .1em;
 
 }
@@ -75,6 +75,7 @@ header {
     outline: none;
     font-size: 1em;
     animation: authDown 1s ease-out;
+    grid-column: 4;
 }
 
 
@@ -124,32 +125,41 @@ header {
     background-image: url("../media/notebook_final.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 60vw;
-    height: 55vh;
-    margin: auto 18vw auto 18vw;
+    background-blend-mode: exclusion;
+    width: 70vw;
+    height: 70vh;
+    margin: 10vh 14vw auto 14vw;
     padding: 10vh 2vw 0 2vw;
-    z-index: -1;
-    border: black 3px ridge;
-    border-radius: 1rem;
+    z-index: 1;
+    border: #3a27186c .5rem inset;
+    border-radius: .5rem;
+}
+
+.row {
+    width: 50%;
 }
 
 .content h3 {
     font-family: 'Sue Ellen Francisco', cursive;
     font-size: 2rem;
     font-weight: 400;
+    letter-spacing: 2px;
     padding: 1rem;
-    margin-left: 2vw;
+    margin-left: 3vw;
+    color: #31363ac9;
 }
+
 input {
-    border: inset 2px rgba(133, 114, 67, 0.39);
+    border: inset 2px rgba(163, 151, 119, 0.521);
+    border-radius: 1em;
     background-color: antiquewhite;
-    width: 10vw;
-    height: 2rem;
+    width: 12vw;
+    height: 1.5rem;
     padding: .5rem;
 }
 label {
     display: inline-block;
-    width: 10vw;
+    width: 13vw;
     text-align: left;
 }
 
@@ -176,7 +186,6 @@ label {
 }
 
 #fileUpload {
-    border: #617f96a6 2px inset;
     border-radius: 5px;
     width: 15vw;
 }
@@ -188,7 +197,7 @@ label {
 .sidebar {
     border: rgba(36, 36, 36, 0.705) 1px solid;
     height: 20vh;
-    width: 25vw;
+    width: 94%;
     background-image: url("../media/spiral.png");
     border-radius: .5em;
     box-shadow: .6em .6em 0 rgba(0, 0, 0, 0.1);
@@ -219,13 +228,14 @@ label {
 main {
     border: solid 3px green;
     height: 100%;
+    width: 100%;
     background-color: #ffffff;
     transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1)
 }
 
 main:active {
     transform: translateY(65rem);
-    transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 1.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .container {
@@ -388,8 +398,6 @@ input[type=range]::-moz-range-thumb {
 .right {
     border: solid 1px yellow;
     height: 20vh;
-    width: 25vw;
-    margin: 0 0 0 5vw;
     padding: 2rem;
     text-align: center
 }
