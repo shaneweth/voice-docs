@@ -11,7 +11,7 @@ html {
 body {
     height: 120%;
     overflow-y: hidden;
-    background-color: #6aa1ce;
+    background-color: #879fadb0;
 }
 
 /* add grid container - divs */
@@ -101,7 +101,7 @@ header {
     position: absolute;
     width: 25vw;
     overflow: hidden;
-    background-color: #6aa1ce;
+    background-color: #8196a7;
     z-index: 1;
     border: black 3px ridge;
     border-radius: 5px;
@@ -124,32 +124,38 @@ header {
     background-image: url("../media/notebook_final.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 70vw;
-    height: 70vh;
-    margin: auto 13vw auto 13vw;
+    width: 60vw;
+    height: 55vh;
+    margin: auto 18vw auto 18vw;
     padding: 10vh 2vw 0 2vw;
-    z-index: 1;
+    z-index: -1;
     border: black 3px ridge;
     border-radius: 1rem;
 }
 
 .content h3 {
+    font-family: 'Sue Ellen Francisco', cursive;
     font-size: 2rem;
-    font-weight: 200;
-    padding: 1.5rem;
-    margin-left: 3vw;
+    font-weight: 400;
+    padding: 1rem;
+    margin-left: 2vw;
 }
-
+input {
+    border: inset 2px rgba(133, 114, 67, 0.39);
+    background-color: antiquewhite;
+    width: 10vw;
+    height: 2rem;
+    padding: .5rem;
+}
 label {
     display: inline-block;
-    width: 20rem;
+    width: 10vw;
     text-align: left;
 }
 
 .submitBtn {
-    width: 2rem;
-    height: 2rem;
-    margin: 2vh 5vw 2vh 5vw;
+    width: 3rem;
+    height: 3rem;
     background-color: rgba(61, 124, 85, 0.993);
     color: #ffffff;
     cursor: pointer;
@@ -214,13 +220,12 @@ main {
     border: solid 3px green;
     height: 100%;
     background-color: #ffffff;
-
-
+    transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1)
 }
 
 main:active {
     transform: translateY(65rem);
-    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .container {
