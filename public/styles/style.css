@@ -5,6 +5,13 @@
 
 html {
     font-family: 'Nunito', sans-serif;
+
+}
+
+body {
+    height: 120%;
+    overflow-y: hidden;
+    background-color: #6aa1ce;
 }
 
 /* add grid container - divs */
@@ -31,15 +38,13 @@ footer {
 
 .grid-container {
     display: grid;
-    min-height: 100%;
     grid-template:
         " header header header header "
         " . main main . "
         " . main main . "
-        " . sidebar right . "
         " . sidebar right . ";
-    grid-template-columns: 1fr 2fr 2fr 1fr;
-    grid-gap: .3em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: .1em;
 
 }
 
@@ -49,12 +54,7 @@ footer {
 
 header {
     border: solid 3px red;
-    height: 8rem;
-}
-
-header .container {
-    display: grid;
-    justify-content: space-between;
+    height: 100%;
 }
 
 /* *********** MODAL **************** */
@@ -64,19 +64,16 @@ header .container {
 
 
 .collapsibleAuth {
-    width: 6.5rem;
-    height: 6.5rem;
-    margin: 1vh 6vw 1vh 6vw;
+    width: 5rem;
+    height: 5rem;
     background-color: rgba(126, 53, 53, 0.89);
     color: #ffffff;
     cursor: pointer;
-    padding: 1em;
     border: inset .5em rgba(121, 51, 51, 0.411);
-    border-radius: 50%;
+    border-radius: 1em;
     text-align: center;
     outline: none;
     font-size: 1em;
-    grid-column: 4;
     animation: authDown 1s ease-out;
 }
 
@@ -102,8 +99,6 @@ header .container {
     margin: auto auto;
     display: none;
     position: absolute;
-    top: 1vh;
-    left: 65%;
     width: 25vw;
     overflow: hidden;
     background-color: #6aa1ce;
@@ -123,27 +118,31 @@ header .container {
       top: 1vh;
     }
   }
+
 .content {
-    padding: 2rem;
-    margin: 10vh auto;
-    /* display: none; */
-    position: relative;
-    width: 55%;
-    overflow: hidden;
-    background-image: url("../media/spiral.png");
+    position: absolute;
+    background-image: url("../media/notebook_final.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 70vw;
+    height: 70vh;
+    margin: auto 13vw auto 13vw;
+    padding: 10vh 2vw 0 2vw;
     z-index: 1;
     border: black 3px ridge;
-    border-radius: 5px;
+    border-radius: 1rem;
 }
 
 .content h3 {
-    margin: 1.2rem;
-    font-weight: 100;
+    font-size: 2rem;
+    font-weight: 200;
+    padding: 1.5rem;
+    margin-left: 3vw;
 }
 
 label {
     display: inline-block;
-    width: 11rem;
+    width: 20rem;
     text-align: left;
 }
 
@@ -170,26 +169,10 @@ label {
     transition: .5s;
 }
 
-.close_modal {
-    position: relative;
-    top: 0;
-    left: 95%;
-    width: 1.2rem;
-    height: 1.2rem;
-    background-color: rgba(153, 1, 1, 0.884);
-    color: whitesmoke;
-    border: 5px rgba(0, 0, 0, 0.288) solid;
-    text-align: center;
-    font-size: 1rem;
-    padding: 0;
-
-}
-
 #fileUpload {
-    background-color: #acc6da;
     border: #617f96a6 2px inset;
     border-radius: 5px;
-    width: 10vw;
+    width: 15vw;
 }
 
 
@@ -229,10 +212,15 @@ label {
 
 main {
     border: solid 3px green;
-    height: 65vh;
-    /* width: 100vw; */
+    height: 100%;
+    background-color: #ffffff;
 
 
+}
+
+main:active {
+    transform: translateY(65rem);
+    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .container {
@@ -244,8 +232,8 @@ main {
 }
 
 .leftCircle {
-    width: 25rem;
-    height: 25rem;
+    width: 22rem;
+    height: 22rem;
     border: 1px solid black;
     border-radius: 50%;
     grid-column: 1;
@@ -254,8 +242,8 @@ main {
 
 
 .rightCircle {
-    width: 25rem;
-    height: 25rem;
+    width: 22rem;
+    height: 22rem;
     border: 1px solid black;
     border-radius: 50%;
     grid-column: 3;
@@ -263,7 +251,7 @@ main {
 }
 
 .transport {
-    width: 28vw;
+    width: 25vw;
     height: 5rem;
     margin: 10vh auto;
     border-radius: 1em;

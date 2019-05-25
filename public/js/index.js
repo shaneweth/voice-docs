@@ -31,6 +31,10 @@ for (j = 0; j < collAuth.length; j++) {
   });
 }
 
+// Main Section Animation
+
+
+
 //AUDIO PLAYER
 // Elements
 

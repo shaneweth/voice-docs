@@ -1,67 +1,66 @@
 <div class="grid-container">
   <header class="header">
-      <button class="collapsible">upload</button>
-      <div class="content">
-        <div class="close_modal">X</div>
-        <form action="/api/projects" enctype="multipart/form-data" method="POST">
-          <div class="row">
-            <label for="title">
-              <h3>title</h3>
-            </label>
-            <input type="text" name="title" />
-          </div>
-          <div class="row">
-            <label for="description">
-              <h3>description</h3>
-            </label>
-            <input type="text" name="description" />
-          </div>
-          <div class="row">
-            <label for="description">
-              <h3>category</h3>
-            </label>
-            <input type="text" name="category" />
-          </div>
-          <div class="row">
-            <label for="location">
-              <h3>location</h3>
-            </label>
-            <input type="text" name="location" />
-          </div>
-          <div class="row">
-            <label for="oName">
-              <h3>owner</h3>
-            </label>
-            <input type="text" name="oName" />
-          </div>
-          <div class="row">
-            <label for="cName">
-              <h3>collaborator</h3>
-            </label>
-            <input type="text" name="cName" />
-          </div>
-          <div class="row" id="fileUpload">
-            <br>
-            <input type="file" name="myFile" />
-            <br>
-            <hr>
-            <input class="submitBtn" type="submit" value="send ->" />
-          </div>
-        </form>
-      </div>
-      <button class="collapsibleAuth">login</button>
-      <div class="contentAuth">
-        <form action="/api/projects" enctype="multipart/form-data" method="POST">
-          <label for="username">User
-            <input id="username-box" type="username">
+    <button class="collapsible">upload</button>
+    <div class="content">
+      <form action="/api/projects" enctype="multipart/form-data" method="POST">
+        <div class="row">
+          <label for="title">
+            <h3>title</h3>
           </label>
-          <label for="password">Pass
-            <input id="password-box" type="password">
+          <input type="text" name="title" />
+        </div>
+        <div class="row">
+          <label for="description">
+            <h3>description</h3>
           </label>
-          <button id="submit" class="submit">Sign up</button>
+          <input type="text" name="description" />
+        </div>
+        <div class="row">
+          <label for="description">
+            <h3>category</h3>
+          </label>
+          <input type="text" name="category" />
+        </div>
+        <div class="row">
+          <label for="location">
+            <h3>location</h3>
+          </label>
+          <input type="text" name="location" />
+        </div>
+        <div class="row">
+          <label for="oName">
+            <h3>owner</h3>
+          </label>
+          <input type="text" name="oName" />
+        </div>
+        <div class="row">
+          <label for="cName">
+            <h3>collaborator</h3>
+          </label>
+          <input type="text" name="cName" />
+        </div>
+        <div class="row" id="fileUpload">
+          <br>
+          <input type="file" name="myFile" />
+          <br>
+          <hr>
+          <input class="submitBtn" type="submit" value="send ->" />
+        </div>
+      </form>
+    </div>
+    <button class="collapsibleAuth">login</button>
+    <div class="contentAuth">
+      <form action="/api/projects" enctype="multipart/form-data" method="POST">
+        <label for="username">User
+          <input id="username-box" type="username">
+        </label>
+        <label for="password">Pass
+          <input id="password-box" type="password">
+        </label>
+        <button id="submit" class="submit">Sign up</button>
 
-        </form>
-      </div>
+      </form>
+    </div>
   </header>
 
   <sidebar class="sidebar">
