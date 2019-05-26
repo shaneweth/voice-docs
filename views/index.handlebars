@@ -4,9 +4,9 @@
       <svg width="400" height="150" xmlns="http://www.w3.org/2000/svg">
         <path id="curve" d="M12,45
            q54,-68 110,15
-           T250 55" fill="none" stroke="#000" stroke-width="0px" />
-        <text font-family="'Faster One', cursive" font-weight="100" font-size="24" fill="url(#grad)" width="400">
-          <textpath xlink:href="#curve"> vox dox rocklockbox</textpath>
+           T250 55" fill="none" stroke="#000" stroke-width="1px" />
+        <text font-family="'Allerta Stencil', sans-serif" font-weight="200" font-size="30" fill="url(#grad)" width="400">
+          <textpath xlink:href="#curve"> vox dox ** lock box</textpath>
         </text>
         <defs>
           <filter height="200%" width="200%" y="-50%" x="-50%" id="svg_11_blur">
@@ -20,8 +20,8 @@
           </filter>
           <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" style="stop-color:rgb(153, 1, 1);stop-opacity:1" />
-            <stop offset="50%" style="stop-color:rgb(124, 21, 21);stop-opacity:1" />
-            <stop offset="60%" style="stop-color: rgb(236, 236, 236);stop-opacity:1" />
+            <stop offset="50%" style="stop-color:rgb(80, 36, 36);stop-opacity:1" />
+            <stop offset="60%" style="stop-color: rgb(250, 250, 250);stop-opacity:1" />
           </linearGradient>
         </defs>
         <g>
@@ -97,12 +97,10 @@
             stroke-opacity="null" stroke-width="0" fill="#000000" />
         </g>
       </svg>
-      {{!-- <h1>Lock</h1><br><h1>Box</h1> --}}
     </div>
     <div class="search">
-      <h2>Project Search</h2>
-      <input type="search" id="search" name="q" label="Search">
-      <button>search</button>
+      <input type="search" id="search" name="q" placeholder="project search" label="Search">
+      <button><i class="fas fa-search"></i></button>
     </div>
     <div class="content">
       <div class="uploadForm">
@@ -212,7 +210,7 @@
   </main>
 
   <right class="right">
-    <button>TOGGLE PLAYER</button>
+    <button class="togglePlayer">TOGGLE PLAYER</button>
   </right>
 
   <footer class="footer">

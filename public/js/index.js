@@ -116,3 +116,14 @@ $(".project-option").on("click", function (e) {
     $(".player_video").attr("src", data.mainFile);
   });
 })
+
+$(function() {
+  $(".togglePlayer").click(function() {
+    $(".main").toggleClass("mainDown");
+  });
+});
+$(function() {
+  $(".togglePlayer").click(function() {
+    $(".content").toggleClass("contentUp");
+  });
+});
