@@ -11,7 +11,7 @@ html {
 body {
     height: 120%;
     overflow-y: hidden;
-    background-color: #879fadb0;
+    background: linear-gradient(180deg, #415c6db0, #6bafddb0, rgba(148, 95, 95, 0.767));
 }
 
 /* add grid container - divs */
@@ -53,7 +53,7 @@ footer {
 }
 
 header {
-    border: solid 3px red;
+    /* border: solid 3px red; */
     height: 100%;
 }
 
@@ -133,8 +133,8 @@ header {
     background-blend-mode: exclusion;
     width: 60vw;
     height: 60rem;
-    margin: 10vh 19.5vw auto 19.5vw;
-    z-index: 1;
+    margin: 8vh 19.5vw auto 19.5vw;
+    z-index: -1;
     border: #3a27186c .5rem inset;
     border-radius: .5rem;
 }
@@ -462,7 +462,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .right {
-    border: solid 1px yellow;
+    /* border: solid 1px yellow; */
     height: 20vh;
     padding: 2rem;
     text-align: center
