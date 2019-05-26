@@ -57,6 +57,7 @@ header {
     height: 100%;
     display: grid;
     background-color: whitesmoke;
+    border-bottom: rgba(58, 58, 58, 0.623) 5px solid;
 }
 
 .logoWrapper {
