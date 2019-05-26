@@ -11,7 +11,7 @@ html {
 body {
     height: 120%;
     overflow-y: hidden;
-    background: linear-gradient(180deg, #415c6db0, #6bafddb0, rgba(148, 95, 95, 0.767));
+    background: radial-gradient(closest-side, #f69d3c, #fefffd, #3f87a6);
 }
 
 /* add grid container - divs */
@@ -61,13 +61,16 @@ header {
 
 .logoWrapper {
     grid-column: 1 / span 2;
-    margin: .5rem 0 0 5rem;
-    padding: .5rem;
-    width: 16vw;
+    margin: 0 0 0 3rem;
+    padding: .2rem;
+    width: 16rem;
+    border: .3em solid rgba(0, 0, 0, 0.082);
+    border-radius: 2rem;
+    background-image: linear-gradient(70deg, rgba(255, 254, 254, 0.877), rgba(47, 51, 59, 0.884))
 }
 
 .logoWrapper svg {
-    width: 20vw;
+    width: 20rem;
 }
 /* Authentication Button - to be modified */
 
@@ -134,7 +137,7 @@ header {
     background-blend-mode: exclusion;
     width: 60vw;
     height: 60vh;
-    margin: 10vh 19.5vw auto 19.5vw;
+    margin: 12vh 19.5vw auto 19.5vw;
     z-index: -1;
     border: #3a27186c .5rem inset;
     border-radius: .5rem;
@@ -308,7 +311,7 @@ main:active {
 .container {
     display: grid;
     grid-gap: 1px;
-    max-width: 80rem;
+    max-width: 70rem;
     margin: auto auto;
     justify-content: space-evenly;
 }
