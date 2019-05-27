@@ -221,9 +221,9 @@ header {
     border-radius: .5rem;
 }
 
-.contentUp {
+/* .contentUp {
     z-index: 1;
-}
+} */
 
 .uploadForm {
     width: 30vw;   
@@ -396,7 +396,7 @@ main {
     background-size: cover;
     transform: translateY(65rem);
     transition: 1.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: -1;
+    /* z-index: -1; */
 }
 
 .container {

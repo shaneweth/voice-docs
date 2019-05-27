@@ -127,3 +127,10 @@ $(function() {
     $(".content").toggleClass("contentUp");
   });
 });
+$(function() {
+  $(".mainDown").on("transitionend", function() {
+    $(".mainDown").css("z-index", -1);
+    $(".contentUp").css("z-index", 1);
+  });
+});
+
