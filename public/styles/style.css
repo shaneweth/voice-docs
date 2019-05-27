@@ -62,13 +62,13 @@ header {
 
 .logoWrapper {
     grid-column: 1 / span 2;
-    margin: .6rem 0 0 3rem;
+    margin: .6rem 0 0 12vw;
     padding: .3rem;
     width: 16rem;
     height: 10rem;
     border: .3em solid rgba(0, 0, 0, 0.082);
     border-radius: 1rem;
-    background-image: linear-gradient(108deg, white, rgba(55, 59, 70, 0.89));
+    background-image: linear-gradient(108deg, white, #909090);
 }
 
 .logoWrapper svg {
