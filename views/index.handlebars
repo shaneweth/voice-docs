@@ -5,7 +5,8 @@
         <path id="curve" d="M12,45
            q54,-68 110,15
            T250 55" fill="none" stroke="76AAC0" stroke-width="0px" />
-        <text font-family="'Allerta Stencil', sans-serif" font-weight="300" font-size="32" stroke="#76AAC0" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" fill="url(#grad)" width="400">
+        <text font-family="'Allerta Stencil', sans-serif" font-weight="300" font-size="30" stroke="#76AAC0"
+          stroke-width="1px" stroke-opacity="1" fill="url(#grad)" width="400">
           <textpath xlink:href="#curve"> vox dox* *lock box</textpath>
         </text>
         <defs>
@@ -166,7 +167,7 @@
       </div>
     </div>
     {{!-- <button class="collapsibleAuth">login</button> --}}
-    <div class="contentAuth">
+    {{!-- <div class="contentAuth">
       <form action="/api/projects" enctype="multipart/form-data" method="POST">
         <label for="username">User
           <input id="username-box" type="username">
@@ -175,9 +176,33 @@
           <input id="password-box" type="password">
         </label>
         <button id="submit" class="submit">Sign up</button>
-
       </form>
+    </div> --}}
+
+    <div class="contentAuth">
+
+      <form action="" method="post" class="signUp">
+        <h4>Sign Up</h4>
+        <label for="username">user</label>
+        <input type="email" name="username" id="signUpUser">
+        <br>
+        <label for="password">pass</label>
+        <input type="password" name="password" id="signUpPass">
+        <button class="signUp">sign up</button>
+      </form>
+
+      <form action="" method="post" class="signIn">
+        <h4>Sign In</h4>
+        <label for="username">user</label>
+        <input type="email" name="username" id="signInUser">
+        <br>
+        <label for="password">pass</label>
+        <input type="password" name="password" id="signInPass">
+        <button class="signIn">sign in</button>
+      </form>
+
     </div>
+
   </header>
 
   <sidebar class="sidebar">
