@@ -140,6 +140,11 @@ header {
     transition: .5s;
 } */
 
+@keyframes move {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+
 .contentAuth {
     grid-column-start: 4;
     display: grid;
@@ -151,6 +156,11 @@ header {
     grid-template-columns: 1fr 1fr;
     text-align: left;
     padding: .5rem 1rem .5rem 1rem;
+
+}
+
+.contentAuth:active {
+    animation: move 3s;
 }
 
 .contentAuth h4 {
@@ -191,16 +201,6 @@ header {
     cursor: pointer;
 
 }
-
-
-@keyframes authUp  {
-    0% {
-      top: -15vh;
-    }
-    100% {
-      top: 1vh;
-    }
-  }
 
 .content {
     position: absolute;
@@ -381,7 +381,7 @@ main {
     height: 100%;
     width: 100%;
     border: rgba(0, 0, 0, 0.685) .5em solid;
-    border-radius: .5rem;
+    border-radius: 1rem;
     background-image: url("../media/steel.jpg");    
     background-repeat: no-repeat;
     background-size: cover;
@@ -408,8 +408,8 @@ main {
 }
 
 .leftCircle {
-    width: 24rem;
-    height: 24rem;
+    width: 25rem;
+    height: 25rem;
     border: 1px solid black;
     background-color: white;
     border-radius: 50%;
@@ -419,8 +419,8 @@ main {
 
 
 .rightCircle {
-    width: 24rem;
-    height: 24rem;
+    width: 25rem;
+    height: 25rem;
     border: 1px solid black;
     background-color: white;
     border-radius: 50%;
