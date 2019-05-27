@@ -395,7 +395,7 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     transform: translateY(65rem);
-    transition: 1.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 2.5s cubic-bezier(0.175, .3, 0.50, 1.275);
     /* z-index: -1; */
 }
 
