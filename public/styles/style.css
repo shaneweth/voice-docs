@@ -56,19 +56,21 @@ header {
     /* border: solid 3px red; */
     height: 100%;
     display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
     background-color: whitesmoke;
     border-bottom: rgba(58, 58, 58, 0.623) 5px solid;
 }
 
 .logoWrapper {
-    grid-column: 1 / span 2;
-    margin: .6rem 0 0 12vw;
+    grid-column: 1;
+    margin: auto auto;
     padding: .3rem;
     width: 16rem;
-    height: 10rem;
-    border: .3em solid rgba(0, 0, 0, 0.082);
+    height: 9rem;
+    border: .2em solid rgba(0, 0, 0, 0.082);
     border-radius: 1rem;
-    background-image: linear-gradient(108deg, white, #909090);
+    background-image: linear-gradient(108deg, white, #d8d8d8, #909090);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.425);
 }
 
 .logoWrapper svg {
@@ -76,33 +78,39 @@ header {
 }
 
 .search {
-    grid-column: 3 / span 1;
-    width: 20vw;
-    margin: 2vh auto;
+    grid-column: 3;
+    width: 80%;
+    margin: 3.5vh auto auto 6vw;
 }
 
 .search input {
-    height: 6rem;
-    width: 16vw;
+    height: 5rem;
+    width: 60%;
     font-size: 2rem;
-    text-align: left;
+    text-align: center;
     background-color: whitesmoke;
     padding: .2em 0 .2em .3em;
 }
 
-.search i {
-    font-size: 2rem;
-    color: #643131;
-}
+
 .search button {
-    height: 5rem;
-    width: 5rem;
+    height: 3rem;
+    width: 3rem;
     border-radius: 50%;
-    border: .3em rgba(158, 136, 80, 0.466) outset;
 }
 
 .search button:hover {
     cursor: pointer;
+}
+
+.search i {
+    font-size: 2.2vw;
+    color: #643131;
+    transition: .3s;
+}
+.search i:hover {
+    color: #BA9CA2;
+    transition: .3s;
 }
 /* Authentication Button - to be modified */
 
