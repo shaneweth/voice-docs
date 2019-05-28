@@ -54,7 +54,7 @@ footer {
 
 header {
     /* border: solid 3px red; */
-    height: 100%;
+    height: 70%;
     display: grid;
     grid-template-columns: 1fr 1fr 2fr 1fr;
     background-color: whitesmoke;
@@ -215,7 +215,7 @@ header {
     background-blend-mode: exclusion;
     width: 60vw;
     height: 60rem;
-    margin: 12vh 19.5vw auto 19.5vw;
+    margin: 15vh 19.5vw auto 19.5vw;
     z-index: -1;
     border: #3a27186c .5rem inset;
     border-radius: .5rem;
@@ -380,6 +380,7 @@ hr {
 main {
     height: 60vh;
     width: 66vw;
+    margin: 0;
     border: rgba(0, 0, 0, 0.685) .5em solid;
     border-radius: 1rem;
     background-image: url("../media/steel.jpg");    
@@ -408,8 +409,8 @@ main {
 }
 
 .leftCircle {
-    width: 25rem;
-    height: 25rem;
+    width: 24rem;
+    height: 24rem;
     border: 1px solid black;
     background-color: white;
     border-radius: 50%;
@@ -419,8 +420,8 @@ main {
 
 
 .rightCircle {
-    width: 25rem;
-    height: 25rem;
+    width: 24rem;
+    height: 24rem;
     border: 1px solid black;
     background-color: white;
     border-radius: 50%;
@@ -429,9 +430,9 @@ main {
 }
 
 .transport {
-    width: 25vw;
-    height: 5rem;
-    margin: 10vh auto;
+    width: 22vw;
+    height: 3.5rem;
+    margin: 6vh auto;
     border-radius: 1em;
     grid-column: 1 / 4;
     text-align: center;
