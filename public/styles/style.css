@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    height: 120%;
+    height: 140%;
     overflow-y: hidden;
     background: radial-gradient(closest-side, #f69d3c, #fefffd, #3f87a6);
 }
@@ -42,6 +42,7 @@ footer {
         " header header header header "
         " . main main right "
         " . main main right "
+        " . main main right "
         " . sidebar sidebar . ";
     grid-template-columns: 1fr 2fr 2fr 1fr;
     grid-gap: .1em;
@@ -54,16 +55,16 @@ footer {
 
 header {
     /* border: solid 3px red; */
-    height: 70%;
+    height: 4.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr 2fr 1fr;
-    background-color: whitesmoke;
+    background-color: rgba(46, 46, 46, 0.657);
     border-bottom: rgba(58, 58, 58, 0.623) 5px solid;
 }
 
 .logoWrapper {
     grid-column: 1;
-    margin: 2% auto 5% auto;
+    margin: auto auto;
     padding: .3rem;
     width: 16rem;
     height: 9rem;
@@ -74,13 +75,13 @@ header {
 }
 
 .logoWrapper svg {
-    width: 20rem;
+    width: 18rem;
 }
 
 .search {
     grid-column: 3;
     width: 90%;
-    margin: 3% auto 8% auto;
+    margin: 2% auto 2% auto;
 }
 
 .search input {
@@ -206,7 +207,7 @@ header {
 .content {
     position: absolute;
     grid-column: col 2 / span 2;
-    grid-row: row 2;
+    /* grid-row: row 2; */
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 1fr 1fr;
@@ -215,8 +216,8 @@ header {
     background-size: cover;
     background-blend-mode: exclusion;
     width: 60vw;
-    height: 60rem;
-    margin: 15vh 19.5vw auto 19.5vw;
+    height: 74vh;
+    margin: 7.5vh 19.5vw auto 19.5vw;
     z-index: -1;
     border: #3a27186c .5rem inset;
     border-radius: .5rem;
@@ -234,8 +235,8 @@ header {
 
 .content h3 {
     font-family: 'Sue Ellen Francisco', cursive;
-    font-size: 2rem;
-    font-weight: 400;
+    font-size: 1.8rem;
+    font-weight: 300;
     letter-spacing: 2px;
     padding: 1rem;
     margin-left: 3vw;
@@ -349,8 +350,9 @@ hr {
 /* SIDEBAR - NOTEPAD */
 .sidebar {
     border: rgba(36, 36, 36, 0.705) 1px solid;
-    height: 20vh;
-    width: 95%;
+    height: 18vh;
+    width: 60vw;
+    margin: 2.5vh auto auto;
     background-image: url("../media/spiral.png");
     border-radius: .5em;
     box-shadow: .6em .6em 0 rgba(0, 0, 0, 0.1);
@@ -369,7 +371,7 @@ hr {
 .sidebar:before {
     content: "";
     position: absolute;
-    height: 20vh;
+    height: 15vh;
     width: .3em;
     top: 0;
     left: 2.8em;
@@ -379,9 +381,9 @@ hr {
 }
 
 main {
-    height: 60vh;
-    width: 66vw;
-    margin: 0;
+    height: 72vh;
+    width: 62vw;
+    margin: 0 2vw 0 2vw;
     border: rgba(0, 0, 0, 0.685) .5em solid;
     border-radius: 1rem;
     background-image: url("../media/steel.jpg");    
@@ -396,7 +398,7 @@ main {
     background-image: url("../media/steel.jpg");    
     background-repeat: no-repeat;
     background-size: cover;
-    transform: translateY(40rem);
+    transform: translateY(72vh);
     transition: 2.5s cubic-bezier(0.175, .3, 0.50, 1.275);
     /* z-index: -1; */
 }
