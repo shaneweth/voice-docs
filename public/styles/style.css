@@ -57,14 +57,14 @@ header {
     /* border: solid 3px red; */
     height: 10vh;
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     background-color: rgba(46, 46, 46, 0.657);
     border-bottom: rgba(58, 58, 58, 0.623) 5px solid;
 }
 
 .logoWrapper {
     grid-column: 1;
-    margin: auto auto;
+    margin: auto auto auto 2vw;
     padding: .3rem;
     width: 16rem;
     height: 9rem;
@@ -75,19 +75,19 @@ header {
 }
 
 .logoWrapper svg {
-    width: 18rem;
+    width: 16rem;
 }
 
 .search {
     grid-column: 3;
-    width: 90%;
-    size: 100%;
-    margin: 2% auto 2% auto;
+    width: 100%;
+    margin: 5% auto 5% auto;
+
 }
 
 .search input {
-    height: 4rem;
-    width: 60%;
+    height: 3.5rem;
+    width: 85%;
     font-size: 2rem;
     text-align: center;
     background-color: whitesmoke;
@@ -117,30 +117,6 @@ header {
 }
 /* Authentication Button - to be modified */
 
-/* .collapsibleAuth {
-    width: 5rem;
-    height: 5rem;
-    background-color: rgba(126, 53, 53, 0.89);
-    color: #ffffff;
-    cursor: pointer;
-    border: inset .5em rgba(121, 51, 51, 0.411);
-    border-radius: 1em;
-    text-align: center;
-    outline: none;
-    font-size: 1em;
-    animation: authDown 1s ease-out;
-    grid-column: 4;
-} */
-
-/* .active, */
-/* .collapsibleAuth:hover {
-    background-color: rgba(167, 51, 51, 0.849);
-    border: outset .5em rgba(121, 51, 51, 0.411);
-    box-shadow: -0.6em .6em 0 rgba(85, 29, 29, 0.322);
-    text-shadow: 0 0 1px rgba(0, 0, 0, 0.253);
-    font-size: 1.1rem;
-    transition: .5s;
-} */
 
 @keyframes move {
     from { opacity: 1; }
@@ -149,7 +125,9 @@ header {
 
 .contentAuth {
     grid-column-start: 4;
-    display: grid;
+    display: none;
+    position: absolute;
+    right: -5rem;
     border: .2em solid rgba(0, 0, 0, 0.082);
     border-radius: 1rem;
     background-image: linear-gradient(108deg, white, #d8d8d8, #909090);
@@ -159,11 +137,14 @@ header {
     grid-template-columns: 1fr 1fr;
     text-align: left;
     padding: .5rem 1rem .1rem 1rem;
-
+    z-index: -1;
 }
 
-.contentAuth:active {
-    animation: move 3s;
+.contentAuthUp {
+    display: grid;
+    transition: 1s;
+    transform: translateX(-3rem);
+    z-index: 1;
 }
 
 .contentAuth h4 {
@@ -217,25 +198,26 @@ header {
     background-size: cover;
     background-blend-mode: exclusion;
     width: 60vw;
-    height: 72vh;
-    margin: 8vh 19.5vw auto 19.5vw;
+    height: 71vh;
+    margin: 12vh 19.5vw auto 19.5vw;
     z-index: -1;
     border: #3a27186c .5rem inset;
     border-radius: .5rem;
 }
 
-/* .contentUp {
+.contentUp {
     z-index: 1;
-} */
+}
 
 .uploadForm {
     width: 30vw;   
     padding: 10vh 0 0 1vw;
     display: flex;
+    font-family: 'Sue Ellen Francisco', cursive;
+
 }
 
 .content h3 {
-    font-family: 'Sue Ellen Francisco', cursive;
     font-size: 1.8rem;
     font-weight: 300;
     letter-spacing: 2px;
@@ -385,6 +367,7 @@ main {
     height: 72vh;
     width: 62vw;
     margin: 1vh 2vw 0 2vw;
+    z-index: 1;
     border: rgba(0, 0, 0, 0.685) .5em solid;
     border-radius: 1rem;
     background-image: url("../media/steel.jpg");    
@@ -400,8 +383,8 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     transform: translateY(72vh);
-    transition: 2.5s cubic-bezier(0.175, .3, 0.50, 1.275);
-    /* z-index: -1; */
+    transition: 1.5s cubic-bezier(0.175, .3, 0.50, 1.275);
+    z-index: -1;
 }
 
 .container {

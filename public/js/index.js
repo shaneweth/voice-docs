@@ -1,35 +1,35 @@
 
 // for hidden collapsible upload element
 
-var coll = document.getElementsByClassName("collapsible");
-var i;
+// var coll = document.getElementsByClassName("collapsible");
+// var i;
 
-var collAuth = document.getElementsByClassName("collapsibleAuth");
-var j;
+// var collAuth = document.getElementsByClassName("collapsibleAuth");
+// var j;
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
+// for (i = 0; i < coll.length; i++) {
+//   coll[i].addEventListener("click", function () {
+//     this.classList.toggle("active");
+//     var content = this.nextElementSibling;
+//     if (content.style.display === "block") {
+//       content.style.display = "none";
+//     } else {
+//       content.style.display = "block";
+//     }
+//   });
+// }
 
-for (j = 0; j < collAuth.length; j++) {
-  collAuth[j].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "inline") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "inline";
-    }
-  });
-}
+// for (j = 0; j < collAuth.length; j++) {
+//   collAuth[j].addEventListener("click", function () {
+//     this.classList.toggle("active");
+//     var content = this.nextElementSibling;
+//     if (content.style.display === "inline") {
+//       content.style.display = "none";
+//     } else {
+//       content.style.display = "inline";
+//     }
+//   });
+// }
 
 // Main Section Animation
 
@@ -118,19 +118,21 @@ $(".project-option").on("click", function (e) {
 })
 
 $(function() {
+  $(".toggleLogin").click(function() {
+    $(".contentAuth").toggleClass("contentAuthUp");
+  })
+})
+
+$(function() {
   $(".togglePlayer").click(function() {
     $(".main").toggleClass("mainDown");
   });
 });
-$(function() {
-  $(".togglePlayer").click(function() {
-    $(".content").toggleClass("contentUp");
-  });
-});
+
 $(function() {
   $(".mainDown").on("transitionend", function() {
     $(".mainDown").css("z-index", -1);
-    $(".contentUp").css("z-index", 1);
+    $(".content").toggleClass("contentUp");
   });
 });
 
