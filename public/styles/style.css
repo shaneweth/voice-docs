@@ -55,7 +55,7 @@ footer {
 
 header {
     /* border: solid 3px red; */
-    height: 4.5rem;
+    height: 10vh;
     display: grid;
     grid-template-columns: 1fr 1fr 2fr 1fr;
     background-color: rgba(46, 46, 46, 0.657);
@@ -81,6 +81,7 @@ header {
 .search {
     grid-column: 3;
     width: 90%;
+    size: 100%;
     margin: 2% auto 2% auto;
 }
 
@@ -216,8 +217,8 @@ header {
     background-size: cover;
     background-blend-mode: exclusion;
     width: 60vw;
-    height: 74vh;
-    margin: 7.5vh 19.5vw auto 19.5vw;
+    height: 72vh;
+    margin: 8vh 19.5vw auto 19.5vw;
     z-index: -1;
     border: #3a27186c .5rem inset;
     border-radius: .5rem;
@@ -383,7 +384,7 @@ hr {
 main {
     height: 72vh;
     width: 62vw;
-    margin: 0 2vw 0 2vw;
+    margin: 1vh 2vw 0 2vw;
     border: rgba(0, 0, 0, 0.685) .5em solid;
     border-radius: 1rem;
     background-image: url("../media/steel.jpg");    
