@@ -100,22 +100,27 @@
 
 {{!-- display audio files --}}
     <div class="col-md-6">
-      <h4 class="red_font">Recordings</h4>
+      <h4 class="red_font">Audio files</h4>
       <div id="ready_to_eat">
 
-      {{!-- Insert recordings --}}
-        {{#each recordings}}
-          <form action="/{{key}}" method="POST">
+      {{!-- Insert burgers --}}
+        {{#each projects}}
+         
+          <form action="/" method="POST">
             <div class="input-group">
-              <li class="form-control">{{key}}</li>
+              <li class="form-control">{{title}}</li>
+                <span class="input-group-btn">
+                  <button class="btn btn-success devour-button" type="submit">Devour It!</button>
+                </span>
             </div>
           </form>
+       
         {{/each}}
 
       </div>
     </div>
 
-<right class="right">
+{{!-- <right class="right">
   <h2>Project Search</h2>
   <input type="search" id="search" name="q" label="Search">
   <button>search</button>
@@ -133,7 +138,7 @@
       <h3>Example Result 4</h3>
     </li>
   </ul>
-</right>
+</right> --}}
 
 <footer class="footer">
 </footer>

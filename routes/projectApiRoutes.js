@@ -9,8 +9,8 @@ const router = express.Router();
 
 
 aws.config.update({
-    accessKeyId: "AKIAIYSEHHRUPS64F53A",
-    secretAccessKey: "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"
+    accessKeyId: "AKIATXD362LLFUKDFDF4",
+    secretAccessKey: "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"
 });
 
 module.exports = function (app) {
@@ -28,7 +28,25 @@ module.exports = function (app) {
         });
     });
     // --------------------------
+// ============================================
 
+
+// ===============
+
+// Index Redirect
+router.get('/', function (req, res) {
+    res.redirect('/');
+  });
+  
+  
+  // Index Page (render all burgers)
+  router.get('/index', function (req, res) {
+    project.selectAll(function (data) {
+      var hbsObject = { projects: data };
+      //console.log(hbsObject);
+      res.render('index', hbsObject);
+    });
+  });
 
     // ------------------------
 
@@ -55,7 +73,7 @@ module.exports = function (app) {
         let buffer = file.buffer;
 
         let params = {
-            Bucket: 'teamawesome123',
+            Bucket: 'teamawesome55',
             ACL: 'public-read',
             Body: buffer,
             Key: req.body.oName + "/" + req.body.title + "/" + file.originalname,

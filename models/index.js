@@ -9,6 +9,7 @@ var config = require(__dirname + "/../config/config.json")[env];
 var db = {};
 
 
+
 if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
@@ -19,7 +20,31 @@ if (config.use_env_variable) {
     config
   );
 }
+// ==============================
+// orm
+var orm = {
 
+	// select all burgers
+	selectAll: function (callback) {
+
+		connection.query('SELECT * FROM projects', function (err, result) {
+			if (err) throw err;
+			callback(result);
+		});
+
+	}
+};
+
+var project = {
+
+  selectAll: function (callback) {
+    orm.selectAll(function (res) {
+      callback(res);
+    });
+  }
+
+};
+// ==============================
 fs.readdirSync(__dirname)
   .filter(function(file) {
     return (
