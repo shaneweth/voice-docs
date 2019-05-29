@@ -26,10 +26,12 @@
     "express-handlebars": "^3.1.0",
     "http": "0.0.0",
     "install": "^0.12.2",
+    "mic-recorder-to-mp3": "^2.2.1",
     "multer": "^1.4.1",
     "mysql2": "^1.6.5",
     "npm": "^6.9.0",
     "s3": "^4.4.0",
-    "sequelize": "^5.8.6"
+    "sequelize": "^5.8.6",
+    "webrtc-adapter": "^4.1.1"
   }
 }
