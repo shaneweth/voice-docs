@@ -45,6 +45,8 @@ const progressBar = player.querySelector(".progress_filled");
 const toggle = player.querySelector(".toggle");
 const skipButtons = player.querySelectorAll("[data-skip]");
 const ranges = player.querySelectorAll(".player_slider");
+const tglRotateL = document.querySelector(".leftCircle");
+const tglRotateR = document.querySelector(".rightCircle");
 
 
 // functions
@@ -58,8 +60,14 @@ function togglePlay() {
 
 function updateButton() {
   const icon = this.paused ? "►" : "❚❚";
-  console.log(icon);
+  console.log(tglRotateL);
   toggle.textContent = icon;
+  
+}
+
+function reelRotate() {
+  tglRotateL.classList.toggle("leftCircleRotate");
+  tglRotateR.classList.toggle("rightCircleRotate");
 }
 
 // Skip Function
@@ -82,7 +90,7 @@ function handleProgress() {
 }
 
 function scrub(e) {
-  const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
+  const scrubTime = (e.offsetX / progress.offsetWidth) * audio.duration;
   audio.currentTime = scrubTime;
   console.log(e);
 }
@@ -107,6 +115,8 @@ progress.addEventListener("click", scrub);
 progress.addEventListener("mousemove", (e) => mousedown && scrub(e));
 progress.addEventListener("mousedown", () => mousedown = true);
 progress.addEventListener("mouseup", () => mousedown = false);
+
+// jQuery to Vanilla JS
 
 $(".project-option").on("click", function (e) {
   let text = $(this).text();

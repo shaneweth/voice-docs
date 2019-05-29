@@ -110,18 +110,25 @@ header {
     color: #8f4444b4;
     transition: .3s;
 }
+
 .search i:hover {
     color: #BA9CA2;
     transition: .3s;
     text-shadow: 0 0 2px rgb(0, 0, 0);
 }
+
 /* Authentication Button - to be modified */
 
 
 @keyframes move {
-    from { opacity: 1; }
-    to   { opacity: 0; }
-  }
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
 
 .contentAuth {
     grid-column-start: 4;
@@ -158,7 +165,7 @@ header {
     margin-left: 1.5rem;
 }
 
-.contentAuth input{
+.contentAuth input {
     height: .8em;
     width: 7rem;
     margin: 3px auto 3px auto;
@@ -200,7 +207,7 @@ header {
     width: 60vw;
     height: 71vh;
     margin: 12vh 19.5vw auto 19.5vw;
-    z-index: 1;
+    z-index: 0;
     border: #3a27186c .5rem inset;
     border-radius: .5rem;
 }
@@ -210,10 +217,11 @@ header {
 }
 
 .uploadForm {
-    width: 30vw;   
+    width: 30vw;
     padding: 10vh 0 0 1vw;
     display: flex;
     font-family: 'Sue Ellen Francisco', cursive;
+    z-index: 1;
 
 }
 
@@ -234,6 +242,7 @@ input {
     height: 1.5rem;
     padding: .5rem;
 }
+
 label {
     display: inline-block;
     width: 13vw;
@@ -242,41 +251,43 @@ label {
 
 /* SELECT DROP DOWN STYLE */
 .category {
-	display: inline-block;
-	font-size: 1rem;
-	font-family: sans-serif;
-	font-weight: 400;
-	color: rgb(37, 35, 35);
-	line-height: 1.3;
-	padding: .6em 1.4em .5em .8em;
-	width: 13vw;
-	margin: 0;
+    display: inline-block;
+    font-size: 1rem;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: rgb(37, 35, 35);
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 13vw;
+    margin: 0;
     border: outset 2px rgba(163, 151, 119, 0.521);
-	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-	border-radius: 1em;
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	appearance: none;
-	background-color: #fff;
-	background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
-	linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
-	background-repeat: no-repeat, repeat;
-	background-position: right .7em top 50%, 0 0;
-	background-size: .65em auto, 100%;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+    border-radius: 1em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+        linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
 }
+
 .category::-ms-expand {
-	display: none;
+    display: none;
 }
 
 .category:focus {
-	border-color: #aaa;
-	box-shadow: 0 0 1px 3px rgba(71, 99, 128, 0.7);
-	box-shadow: 0 0 0 3px -moz-mac-focusring;
-	color: #222; 
-	outline: none;
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(71, 99, 128, 0.7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
 }
+
 .category option {
-	font-weight:normal;
+    font-weight: normal;
 }
 
 .fileInput {
@@ -370,7 +381,7 @@ main {
     z-index: 1;
     border: rgba(0, 0, 0, 0.685) .5em solid;
     border-radius: 1rem;
-    background-image: url("../media/steel.jpg");    
+    background-image: url("../media/steel.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1.3);
@@ -379,7 +390,7 @@ main {
 .mainDown {
     /* height: 100%;
     width: 100%; */
-    background-image: url("../media/steel.jpg");    
+    background-image: url("../media/steel.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     transform: translateY(72vh);
@@ -395,14 +406,57 @@ main {
     justify-content: space-evenly;
 }
 
+@-webkit-keyframes rotating
+
+/* Safari and Chrome */
+    {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -ms-transform: rotate(-360deg);
+        -moz-transform: rotate(-360deg);
+        -webkit-transform: rotate(-360deg);
+        -o-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}
+
 .leftCircle {
     width: 23rem;
     height: 23rem;
     border: 1px solid black;
-    background-color: white;
     border-radius: 50%;
+    background-image: url("../media/tape.svg");
     grid-column: 1;
     margin: 5vh 3vw 0 3vw;
+}
+
+.leftCircle:active {
+    -webkit-animation: rotating 2.5s linear infinite;
+    -moz-animation: rotating 2.5s linear infinite;
+    -ms-animation: rotating 2.5s linear infinite;
+    -o-animation: rotating 2.5s linear infinite;
+    animation: rotating 2.5s linear infinite;
 }
 
 
@@ -410,11 +464,20 @@ main {
     width: 23rem;
     height: 23rem;
     border: 1px solid black;
-    background-color: white;
+    background-image: url("../media/tape.svg");
     border-radius: 50%;
     grid-column: 3;
     margin: 5vh 3vw 0 3vw;
 }
+
+.rightCircle:active {
+    -webkit-animation: rotating 1s linear infinite;
+    -moz-animation: rotating 1s linear infinite;
+    -ms-animation: rotating 1s linear infinite;
+    -o-animation: rotating 1s linear infinite;
+    animation: rotating 1s linear infinite;
+}
+
 
 .transport {
     width: 22vw;
@@ -552,4 +615,3 @@ input[type=range]::-moz-range-thumb {
     padding: 2rem;
     text-align: center
 }
-
