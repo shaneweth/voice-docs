@@ -145,4 +145,3 @@ $(function() {
     $(".content").toggleClass("contentUp");
   });
 });
-

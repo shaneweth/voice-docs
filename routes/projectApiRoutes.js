@@ -3,8 +3,8 @@ const db = require("../models");
 const aws = require('aws-sdk');
 
 aws.config.update({
-    accessKeyId: "AKIAIYSEHHRUPS64F53A",
-    secretAccessKey: "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"
+    accessKeyId: process.env.API_KEY,
+    secretAccessKey: process.env.SECRET_KEY
 });
 
 module.exports = function (app) {
@@ -45,7 +45,7 @@ module.exports = function (app) {
         let buffer = file.buffer;
 
         let params = {
-            Bucket: 'teamawesome123',
+            Bucket: 'teamawesome55',
             ACL: 'public-read',
             Body: buffer,
             Key: req.body.oName + "/" + req.body.title + "/" + file.originalname,
