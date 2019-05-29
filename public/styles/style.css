@@ -399,10 +399,14 @@ main {
     width: 23rem;
     height: 23rem;
     border: 1px solid black;
-    background-color: white;
     border-radius: 50%;
+    background-image: url("../media/tape.svg");
     grid-column: 1;
     margin: 5vh 3vw 0 3vw;
+}
+
+.leftCircle:hover {
+    transform: rotate(5) 1s infinite;
 }
 
 
@@ -410,7 +414,7 @@ main {
     width: 23rem;
     height: 23rem;
     border: 1px solid black;
-    background-color: white;
+    background-image: url("../media/tape.svg");
     border-radius: 50%;
     grid-column: 3;
     margin: 5vh 3vw 0 3vw;
