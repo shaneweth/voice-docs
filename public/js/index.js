@@ -60,6 +60,7 @@ function updateButton() {
   const icon = this.paused ? "►" : "❚❚";
   console.log(icon);
   toggle.textContent = icon;
+  toggleClass.
 }
 
 // Skip Function
@@ -82,7 +83,7 @@ function handleProgress() {
 }
 
 function scrub(e) {
-  const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
+  const scrubTime = (e.offsetX / progress.offsetWidth) * audio.duration;
   audio.currentTime = scrubTime;
   console.log(e);
 }
@@ -107,6 +108,8 @@ progress.addEventListener("click", scrub);
 progress.addEventListener("mousemove", (e) => mousedown && scrub(e));
 progress.addEventListener("mousedown", () => mousedown = true);
 progress.addEventListener("mouseup", () => mousedown = false);
+
+// jQuery to Vanilla JS
 
 $(".project-option").on("click", function (e) {
   let text = $(this).text();

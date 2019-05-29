@@ -7,7 +7,8 @@
 	.st1{fill:none;stroke:#000000;stroke-miterlimit:10;}
 </style>
 <circle class="st0" cx="190" cy="190" r="190"/>
-<circle class="st0" cx="190" cy="190" r="157.5"/>
+<circle class="st0" id="projname" cx="190" cy="190" r="157.5"/>
+
 <polygon class="st1" points="215,302.5 165,302.5 175,227.5 205,227.5 "/>
 <path class="st1" d="M88.44,151.5"/>
 <polygon class="st1" points="88.44,135.23 122.11,98.27 170.82,156.16 150.62,178.34 "/>
