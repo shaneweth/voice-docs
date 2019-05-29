@@ -192,11 +192,11 @@ header {
     cursor: pointer;
 
 }
-
+/* THIS IS THE FORM / PROJECT HUD */
 .content {
     position: absolute;
     grid-column: col 2 / span 2;
-    /* grid-row: row 2; */
+    grid-row: row 2;
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 1fr 1fr;
