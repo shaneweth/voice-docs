@@ -61,7 +61,7 @@ module.exports = function (app) {
                     category: req.body.category,
                     location: req.body.location,
                     oName: req.body.oName,
-                    UserUsername: req.body.oName,
+                    Username: req.body.oName,
                     mainFile: data.Location,
                 }
 

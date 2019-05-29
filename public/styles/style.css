@@ -192,11 +192,11 @@ header {
     cursor: pointer;
 
 }
-
+/* THIS IS THE FORM / PROJECT HUD */
 .content {
     position: absolute;
     grid-column: col 2 / span 2;
-    /* grid-row: row 2; */
+    grid-row: row 2;
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 1fr 1fr;
@@ -207,7 +207,11 @@ header {
     width: 60vw;
     height: 71vh;
     margin: 12vh 19.5vw auto 19.5vw;
+<<<<<<< HEAD
     z-index: 0;
+=======
+    z-index: 1;
+>>>>>>> master
     border: #3a27186c .5rem inset;
     border-radius: .5rem;
 }
