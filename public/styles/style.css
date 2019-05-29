@@ -208,10 +208,14 @@ header {
     height: 71vh;
     margin: 12vh 19.5vw auto 19.5vw;
 <<<<<<< HEAD
+<<<<<<< HEAD
     z-index: 0;
 =======
     z-index: 1;
 >>>>>>> master
+=======
+    z-index: 0;
+>>>>>>> 9bf85a0950e36ff1831c135cd4042eb8eb1b2a09
     border: #3a27186c .5rem inset;
     border-radius: .5rem;
 }
