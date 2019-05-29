@@ -1,34 +1,38 @@
 // for hidden collapsible upload element
 
-var coll = document.getElementsByClassName("collapsible");
-var i;
+// var coll = document.getElementsByClassName("collapsible");
+// var i;
 
-var collAuth = document.getElementsByClassName("collapsibleAuth");
-var j;
+// var collAuth = document.getElementsByClassName("collapsibleAuth");
+// var j;
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
+// for (i = 0; i < coll.length; i++) {
+//   coll[i].addEventListener("click", function () {
+//     this.classList.toggle("active");
+//     var content = this.nextElementSibling;
+//     if (content.style.display === "block") {
+//       content.style.display = "none";
+//     } else {
+//       content.style.display = "block";
+//     }
+//   });
+// }
 
-for (j = 0; j < collAuth.length; j++) {
-  collAuth[j].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "grid") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "grid";
-    }
-  });
-}
+// for (j = 0; j < collAuth.length; j++) {
+//   collAuth[j].addEventListener("click", function () {
+//     this.classList.toggle("active");
+//     var content = this.nextElementSibling;
+//     if (content.style.display === "inline") {
+//       content.style.display = "none";
+//     } else {
+//       content.style.display = "inline";
+//     }
+//   });
+// }
+
+// Main Section Animation
+
+
 
 //AUDIO PLAYER
 // Elements
@@ -40,6 +44,8 @@ const progressBar = player.querySelector(".progress_filled");
 const toggle = player.querySelector(".toggle");
 const skipButtons = player.querySelectorAll("[data-skip]");
 const ranges = player.querySelectorAll(".player_slider");
+const tglRotateL = document.querySelector(".leftCircle");
+const tglRotateR = document.querySelector(".rightCircle");
 
 
 // functions
@@ -53,8 +59,14 @@ function togglePlay() {
 
 function updateButton() {
   const icon = this.paused ? "►" : "❚❚";
-  console.log(icon);
+  console.log(tglRotateL);
   toggle.textContent = icon;
+  
+}
+
+function reelRotate() {
+  tglRotateL.classList.toggle("leftCircleRotate");
+  tglRotateR.classList.toggle("rightCircleRotate");
 }
 
 // Skip Function
@@ -77,7 +89,7 @@ function handleProgress() {
 }
 
 function scrub(e) {
-  const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
+  const scrubTime = (e.offsetX / progress.offsetWidth) * audio.duration;
   audio.currentTime = scrubTime;
   console.log(e);
 }
@@ -288,6 +300,8 @@ progress.addEventListener("mousemove", (e) => mousedown && scrub(e));
 progress.addEventListener("mousedown", () => mousedown = true);
 progress.addEventListener("mouseup", () => mousedown = false);
 
+// jQuery to Vanilla JS
+
 $(".project-option").on("click", function (e) {
   let text = $(this).text();
   let username = "lmh96";
@@ -296,3 +310,23 @@ $(".project-option").on("click", function (e) {
     $(".player_video").attr("src", data.mainFile);
   });
 })
+
+$(function() {
+  $(".toggleLogin").click(function() {
+    $(".contentAuth").toggleClass("contentAuthUp");
+  })
+})
+
+$(function() {
+  $(".togglePlayer").click(function() {
+    $(".main").toggleClass("mainDown");
+  });
+});
+
+$(function() {
+  $(".mainDown").on("transitionend", function() {
+    $(".mainDown").css("z-index", -1);
+    $(".content").toggleClass("contentUp");
+  });
+});
+
