@@ -45,6 +45,8 @@ const progressBar = player.querySelector(".progress_filled");
 const toggle = player.querySelector(".toggle");
 const skipButtons = player.querySelectorAll("[data-skip]");
 const ranges = player.querySelectorAll(".player_slider");
+const tglRotateL = document.querySelector(".leftCircle");
+const tglRotateR = document.querySelector(".rightCircle");
 
 
 // functions
@@ -58,9 +60,14 @@ function togglePlay() {
 
 function updateButton() {
   const icon = this.paused ? "►" : "❚❚";
-  console.log(icon);
+  console.log(tglRotateL);
   toggle.textContent = icon;
-  toggleClass.
+  
+}
+
+function reelRotate() {
+  tglRotateL.classList.toggle("leftCircleRotate");
+  tglRotateR.classList.toggle("rightCircleRotate");
 }
 
 // Skip Function
