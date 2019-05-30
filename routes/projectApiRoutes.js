@@ -8,10 +8,15 @@ const router = express.Router();
 
 
 
-aws.config.update({
-    accessKeyId: "AKIATXD362LLFUKDFDF4",
-    secretAccessKey: "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"
-});
+// aws.config.update({
+//     accessKeyId: "AKIATXD362LLFUKDFDF4",
+//     secretAccessKey: "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"
+// });
+
+let s3 = new aws.S3({
+    accessKeyId: process.env.accessKeyId,
+    secretAccessKey: process.env.secretAccessKey
+  });
 
 module.exports = function (app) {
     app.get("/api/projects", function (req, res) {
