@@ -623,3 +623,7 @@ input[type=range]::-moz-range-thumb {
     padding: 2rem;
     text-align: center
 }
+
+.right button {
+    margin-top: 10rem;
+}
