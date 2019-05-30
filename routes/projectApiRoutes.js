@@ -1,19 +1,32 @@
 require("express-fileupload");
 const db = require("../models");
 const aws = require('aws-sdk');
+const dotenv = require('dotenv');
 
-// Node Dependencies
-const express = require('express');
+const burger = require('../models/projects.js');
+
 const router = express.Router();
-// testing
 
-let s3 = new aws.S3({
-    accessKeyId: process.env.accessKeyId,
-    secretAccessKey: process.env.secretAccessKey
-  });
+dotenv.config();
+
+// aws.config.update({
+//     accessKeyId: process.env.accessKeyId,
+//     secretAccessKey: process.env.secretAccessKey
+// });
+aws.config.update({
+    accessKeyId: "AKIATXD362LLNJQHIAKW",
+    secretAccessKey: "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"
+});
 
 module.exports = function (app) {
-    app.get("/api/projects", function (req, res) {
+    // ------------
+    router.get("/api/projects", function (req, res) {
+        burger.selectAll(function (data) {
+            var hbsObject = { burgers: data };
+            res.render('/', hbsObject);
+          });
+
+// ------------
         let query = {};
         if (req.query.oName) {
             query.oName = req.query.oName;
@@ -26,24 +39,6 @@ module.exports = function (app) {
             res.json(dbProject);
         });
     });
-
-
-// Index Redirect
-router.get('/', function (req, res) {
-    res.redirect('/');
-  });
-  
-  
-  // Index Page (render all burgers)
-  router.get('/index', function (req, res) {
-    project.selectAll(function (data) {
-      var hbsObject = { projects: data };
-      //console.log(hbsObject);
-      res.render('index', hbsObject);
-    });
-  });
-
-    // ------------------------
 
     app.get("/api/projects/:title/:oName", function (req, res) {
         const s3 = new aws.S3();
@@ -62,7 +57,7 @@ router.get('/', function (req, res) {
     app.post("/api/projects", function (req, res) {
         const s3 = new aws.S3();
 
-        // console.log(req.files[0]);
+        console.log(req.files[0]);
 
         let file = req.files[0];
         let buffer = file.buffer;
@@ -87,6 +82,26 @@ router.get('/', function (req, res) {
                     Username: req.body.oName,
                     mainFile: data.Location,
                 }
+
+                db.User.findOne({
+                    where: {
+                        username: newProject.oName,
+                    }
+                }).then(function(dbUser) {
+                    let projects = dbUser.pNames;
+                    console.log("\n\n\n" + projects + "\n\n\n");
+                    if(projects === "null" || projects === null)
+                        projects = newProject.title + ",";
+                    else
+                        projects += newProject.title + ",";
+
+                    db.User.update(
+                        {pNames: projects},
+                        {returning: true, where: {username: newProject.oName}}
+                    ).then(function(data) {
+                        console.log(data);
+                    });
+                })
 
                 db.Project.create(newProject).then(function (dbProject) {
                     res.json(dbProject);

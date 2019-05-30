@@ -158,12 +158,16 @@
         </form>
       </div>
       <div class="projView">
-        <ul>List of Projects
-          <li>Project 1</li>
-          <li>Project 2</li>
-          <li>Project 3</li>
-          <li>Project 4</li>
-        </ul>
+           {{!-- Insert burgers --}}
+        {{#each burgers}}
+        
+          {{!-- <form action="burger/eat/{{id}}" method="POST">
+            <div class="input-group"> --}}
+              <li class="form-control">{{id}}. {{mainFile}}</li>
+            {{!-- </div>
+          </form> --}}
+        
+        {{/each}}
       </div>
     </div>
 
