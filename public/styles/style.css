@@ -615,3 +615,16 @@ input[type=range]::-moz-range-thumb {
     padding: 2rem;
     text-align: center
 }
+
+
+/*Record Audio Classes*/
+
+.record {
+    height: 20px;
+    width: 20px;
+}
+
+.stop {
+    height: 20px;
+    width: 20px;
+}
