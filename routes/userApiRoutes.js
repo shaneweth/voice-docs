@@ -23,9 +23,9 @@ module.exports = function (app) {
   })
 
   //login function
-  //current one is only temporary until we implement an actual
-  //authentication technology
+  //current one is only temporary until we implement 0auth2
   app.get("/api/users/:username/:password", function (req, res) {
+    console.log(req.params);
     db.User.findOne({
       where: {
         username: req.params.username,
@@ -33,7 +33,8 @@ module.exports = function (app) {
       },
       include: [db.Project],
     }).then(function (dbUser) {
-
+      console.log(dbUser);
+      res.json(dbUser);
     });
   })
 
@@ -62,7 +63,7 @@ module.exports = function (app) {
 
   //delete a user by id, not sure of current use cases
   //but i could think of a few reasons to add in later iterations
-  app.delete("/api/users/:uid", function (req, res) {
+  app.delete("/api/users/:username", function (req, res) {
     db.Example.destroy({ where: { username: req.params.username } }).then(function (dbExample) {
       res.json(dbExample);
     });

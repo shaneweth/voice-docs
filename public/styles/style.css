@@ -144,7 +144,7 @@ header {
     grid-template-columns: 1fr 1fr;
     text-align: left;
     padding: .5rem 1rem .1rem 1rem;
-    z-index: -1;
+    z-index: 0;
 }
 
 .contentAuthUp {
@@ -207,7 +207,7 @@ header {
     width: 60vw;
     height: 71vh;
     margin: 12vh 19.5vw auto 19.5vw;
-    z-index: -1;
+    z-index: 0;
     border: #3a27186c .5rem inset;
     border-radius: .5rem;
 }

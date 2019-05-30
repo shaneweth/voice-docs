@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
             primaryKey: true,
         },
         password: DataTypes.STRING,
-        pNames: DataTypes.JSON,
+        pNames: DataTypes.TEXT,
     });
 
     User.associate = function(models) {

@@ -145,3 +145,36 @@ $(function() {
     $(".content").toggleClass("contentUp");
   });
 });
+
+$("#signInBtn").on("click", function(e) {
+  e.preventDefault();
+
+  let user = $("#signInUser").val();
+  let pass = $("#signInPass").val();
+
+  let path = "/api/users/" + user + "/" + pass;
+
+  $.get(path, function(data) {
+    console.log(data);
+  })
+});
+
+$("#signUpBtn").on("click", function(e) {
+  e.preventDefault();
+
+  let user = $("#signUpUser").val();
+  let pass = $("#signUpPass").val();
+  let newUser = {
+    username: user,
+    password: pass,
+  };
+
+  $.post("/api/users", newUser)
+  .then(function(data) {
+    console.log(data);
+  })
+});
+
+window.onload = function() {
+  
+}

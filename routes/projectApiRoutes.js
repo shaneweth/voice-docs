@@ -1,6 +1,9 @@
 require("express-fileupload");
 const db = require("../models");
 const aws = require('aws-sdk');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 aws.config.update({
     accessKeyId: process.env.API_KEY,
@@ -64,6 +67,26 @@ module.exports = function (app) {
                     UserUsername: req.body.oName,
                     mainFile: data.Location,
                 }
+
+                db.User.findOne({
+                    where: {
+                        username: newProject.oName,
+                    }
+                }).then(function(dbUser) {
+                    let projects = dbUser.pNames;
+                    console.log("\n\n\n" + projects + "\n\n\n");
+                    if(projects === "null" || projects === null)
+                        projects = newProject.title + ",";
+                    else
+                        projects += newProject.title + ",";
+
+                    db.User.update(
+                        {pNames: projects},
+                        {returning: true, where: {username: newProject.oName}}
+                    ).then(function(data) {
+                        console.log(data);
+                    });
+                })
 
                 db.Project.create(newProject).then(function (dbProject) {
                     res.json(dbProject);
