@@ -5,9 +5,13 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
+// aws.config.update({
+//     accessKeyId: process.env.API_KEY,
+//     secretAccessKey: process.env.SECRET_KEY
+// });
 aws.config.update({
-    accessKeyId: process.env.API_KEY,
-    secretAccessKey: process.env.SECRET_KEY
+    accessKeyId: process.env.accessKeyId,
+    secretAccessKey: process.env.secretAccessKey
 });
 
 module.exports = function (app) {
