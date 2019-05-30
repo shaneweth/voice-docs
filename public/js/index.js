@@ -164,6 +164,9 @@ $("#signUpBtn").on("click", function(e) {
 
   let user = $("#signUpUser").val();
   let pass = $("#signUpPass").val();
+
+  let path = "/api/users/" + user + "/" + pass;
+
   let newUser = {
     username: user,
     password: pass,
@@ -172,9 +175,12 @@ $("#signUpBtn").on("click", function(e) {
   $.post("/api/users", newUser)
   .then(function(data) {
     console.log(data);
+    $.get(path, function() {
+
+    })
   })
 });
 
 window.onload = function() {
-  
+  //login with localstorage goes here
 }
