@@ -192,6 +192,17 @@ header {
     cursor: pointer;
 
 }
+.togglePlayer {
+    grid-column: 4;
+    font-size: 5rem;
+    width: 5rem;
+    height: 6rem;;
+    margin: 1vh auto;
+    border-radius: 1rem;
+}
+.togglePlayer:hover {
+    cursor: pointer;
+}
 /* THIS IS THE FORM / PROJECT HUD */
 .content {
     position: absolute;

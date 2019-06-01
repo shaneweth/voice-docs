@@ -154,8 +154,10 @@
         {{!-- display db data end --}}
 
       </div>
+    </div>
 
-      <div class="contentAuth">
+
+    {{!-- <div class="contentAuth">
 
         <form class="signUp">
           <h4>Sign Up</h4>
@@ -177,7 +179,10 @@
           <button class="signIn" id="signInBtn">sign in</button>
         </form>
 
-      </div>
+      </div> --}}
+
+    <button class="togglePlayer"><i class="fas fa-clipboard-list">
+      </i></button>
 
   </header>
 
@@ -193,10 +198,7 @@
       </div>
       <div class="transport">
         <div class="player">
-          <audio class="player_video viewer"
-          id = "play"
-            src="testing"
-            type="audio/mpeg"></audio>
+          <audio class="player_video viewer" id="play" src="testing" type="audio/mpeg"></audio>
           <div class="player_controls">
             <div class="progress">
               <div class="progress_filled"></div>
@@ -214,8 +216,6 @@
   </main>
 
   <right class="right">
-    <button class="togglePlayer">TOGGLE PLAYER</button>
-    <button class="toggleLogin">TOGGLE AUTH</button>
   </right>
 
   <footer class="footer">
@@ -228,9 +228,9 @@
 
   <script>
 
-  var x = document.getElementById("play").src;
-  
- console.log(x);
+    var x = document.getElementById("play").src;
 
- 
+    console.log(x);
+
+
   </script>
