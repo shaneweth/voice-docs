@@ -314,16 +314,13 @@ label {
 .submitBtn {
     width: 3rem;
     height: 3rem;
-    background-color: rgba(61, 124, 85, 0.993);
-    color: #ffffff;
+    border: #753939 2px outset;
+    border-radius: 50%;
     cursor: pointer;
-    padding: 1em;
-    border: inset .5em rgba(82, 37, 37, 0.425);
-    border-radius: 1rem;
-    text-align: center;
-    outline: none;
-    font-size: .6em;
-    transition: .3s
+    margin: .3rem;
+    background-color: #458ca8;
+    color: white;
+    transition: .3s;
 }
 
 .submitBtn:hover {
