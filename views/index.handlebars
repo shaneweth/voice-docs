@@ -138,10 +138,10 @@
           {{!-- display db data --}}
 
           {{#each files}}
-
-          <li> {{title}}</li>
-          
-            <button class="btn-select" id="test" value={{url}} type="submit">Select</button>
+          <ol>
+            <li> {{title}}</li>
+            <button class="btn-select" id="btnUrl" value={{url}} type="submit">Select</button>
+          </ol>
         </div>
         </form>
 
@@ -186,7 +186,8 @@
   </header>
 
   <sidebar class="sidebar">
-    <p contenteditable="true">notes</p>
+    <p contenteditable="true">This is an editable paragraph.</p>
+
   </sidebar>
 
   <main class="main">
@@ -197,7 +198,9 @@
       </div>
       <div class="transport">
         <div class="player">
-          <audio class="player_video viewer" id="play" src="testing" type="audio/mpeg"></audio>
+          <audio class="player_video viewer" id="player" src="testing" type="audio/mpeg">
+            <source src="" type="audio/mpeg" />
+          </audio>
           <div class="player_controls">
             <div class="progress">
               <div class="progress_filled"></div>
@@ -217,8 +220,6 @@
   <right class="right">
   </right>
 
-  <footer class="footer">
-  </footer>
 
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
@@ -226,10 +227,16 @@
   <script src="/js/auth.js"></script>
 
   <script>
-
-    var x = document.getElementById("play").src;
-
-    console.log(x);
+    // put button value attr into an empty var
+    var btnVal = "";
+    $("#btnUrl").click(function () {
+      console.log("HERE I AM");
+      var btnVal = $("#btnUrl").val();
+      console.log(btnVal);
+      var playme = document.getElementById('player');
+      playme.src = btnVal;
+      playme.load();
+    })
 
 
   </script>

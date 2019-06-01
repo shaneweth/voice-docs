@@ -351,12 +351,25 @@ label {
     text-align: center;
 }
 
-.projView button {
+.projView li {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
     width: 10rem;
-    height: 2rem;
-    border: #753939 2px outset;
+    border: 1px whitesmoke solid;
     border-radius: 1rem;
+    padding: .3rem;
+    margin: auto auto;
+}
+
+.projView button {
+    width: 3rem;
+    height: 3rem;
+    border: #753939 2px outset;
+    border-radius: 50%;
     cursor: pointer;
+    margin: .3rem;
+    background-color: #458ca8;
+    color: white;
 }
 
 hr {

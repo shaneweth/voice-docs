@@ -1,4 +1,3 @@
-
 // Main Section Animation
 //AUDIO PLAYER
 // Elements
@@ -27,7 +26,7 @@ function updateButton() {
   const icon = this.paused ? "►" : "❚❚";
   console.log(tglRotateL);
   toggle.textContent = icon;
-  
+
 }
 
 function reelRotate() {
@@ -92,26 +91,26 @@ $(".project-option").on("click", function (e) {
   });
 })
 
-$(function() {
-  $(".toggleLogin").click(function() {
+$(function () {
+  $(".toggleLogin").click(function () {
     $(".contentAuth").toggleClass("contentAuthUp");
   })
 })
 
-$(function() {
-  $(".togglePlayer").click(function() {
+$(function () {
+  $(".togglePlayer").click(function () {
     $(".main").toggleClass("mainDown");
   });
 });
 
-$(function() {
-  $(".mainDown").on("transitionend", function() {
+$(function () {
+  $(".mainDown").on("transitionend", function () {
     $(".mainDown").css("z-index", -1);
     $(".content").toggleClass("contentUp");
   });
 });
 
-$("#signInBtn").on("click", function(e) {
+$("#signInBtn").on("click", function (e) {
   e.preventDefault();
 
   let user = $("#signInUser").val();
@@ -119,12 +118,12 @@ $("#signInBtn").on("click", function(e) {
 
   let path = "/api/users/" + user + "/" + pass;
 
-  $.get(path, function(data) {
+  $.get(path, function (data) {
     console.log(data);
   })
 });
 
-$("#signUpBtn").on("click", function(e) {
+$("#signUpBtn").on("click", function (e) {
   e.preventDefault();
 
   let user = $("#signUpUser").val();
@@ -138,15 +137,17 @@ $("#signUpBtn").on("click", function(e) {
   };
 
   $.post("/api/users", newUser)
-  .then(function(data) {
-    console.log(data);
-    $.get(path, function() {
+    .then(function (data) {
+      console.log(data);
+      $.get(path, function () {
 
+      })
     })
-  })
 });
 
-$(".player_button").click(function() {
+$(".player_button").click(function () {
   $(".leftCircle").toggleClass("leftCircleRotate");
   $(".rightCircle").toggleClass("rightCircleRotate");
 });
+
+
