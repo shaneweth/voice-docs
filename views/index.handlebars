@@ -134,31 +134,23 @@
         </form>
       </div>
       <div class="projView">
-        <div>
-          {{!-- display db data --}}
+        {{!-- display db data --}}
 
-          {{#each files}}
-          <ol>
-            <li>
-              <h4>{{title}}</h4>
-            </li>
-            <button class="btn-select" id="btnUrl" value={{url}} type="submit">Select</button>
-          </ol>
-        </div>
-        </form>
+        {{#each files}}
+        <ul>
+          <li>
+            {{title}}
+          </li>
+          <button class="btn-select" id="btnUrl" value={{url}} type="submit">Select</button>
+        </ul>
 
-        {{/each}}
+      {{/each}}
 
+      {{!-- display db data end --}}
 
 
 
-        {{!-- display db data end --}}
-
-      </div>
-    </div>
-
-
-    {{!-- <div class="contentAuth">
+      {{!-- <div class="contentAuth">
 
         <form class="signUp">
           <h4>Sign Up</h4>
@@ -181,9 +173,12 @@
         </form>
 
       </div> --}}
-
-    <button class="togglePlayer"><i class="fas fa-clipboard-list">
-      </i></button>
+      </div>
+    </div>
+    <div>
+      <button class="togglePlayer"><i class="fas fa-clipboard-list">
+        </i></button>
+    </div>
 
   </header>
 
