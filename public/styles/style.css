@@ -192,6 +192,22 @@ header {
     cursor: pointer;
 
 }
+.togglePlayer {
+    grid-column: 4;
+    font-size: 5rem;
+    width: 5rem;
+    height: 6rem;;
+    margin: 1vh auto;
+    border-radius: 1rem;
+    border: #8d8d8d 2px double;
+    opacity: .8;
+    transition: .3s;
+}
+.togglePlayer:hover {
+    cursor: pointer;
+    opacity: 1;
+    transition: .4s;
+}
 /* THIS IS THE FORM / PROJECT HUD */
 .content {
     position: absolute;
@@ -335,6 +351,14 @@ label {
     text-align: center;
 }
 
+.projView button {
+    width: 10rem;
+    height: 2rem;
+    border: #753939 2px outset;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
 hr {
     width: 90%;
 }
@@ -451,7 +475,7 @@ main {
     margin: 5vh 3vw 0 3vw;
 }
 
-.leftCircle:active {
+.leftCircleRotate {
     -webkit-animation: rotating 2.5s linear infinite;
     -moz-animation: rotating 2.5s linear infinite;
     -ms-animation: rotating 2.5s linear infinite;
@@ -470,7 +494,7 @@ main {
     margin: 5vh 3vw 0 3vw;
 }
 
-.rightCircle:active {
+.rightCircleRotate {
     -webkit-animation: rotating 1s linear infinite;
     -moz-animation: rotating 1s linear infinite;
     -ms-animation: rotating 1s linear infinite;

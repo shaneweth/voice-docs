@@ -29,7 +29,7 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/userApiRoutes")(app);
+// require("./routes/userApiRoutes")(app);
 require("./routes/projectApiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
