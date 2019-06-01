@@ -1,3 +1,4 @@
+
 "use strict";
 
 var fs = require("fs");
@@ -7,6 +8,7 @@ var basename = path.basename(module.filename);
 var env = process.env.NODE_ENV || "development";
 var config = require(__dirname + "/../config/config.json")[env];
 var db = {};
+
 
 
 
@@ -20,31 +22,7 @@ if (config.use_env_variable) {
     config
   );
 }
-// ==============================
-// orm
-var orm = {
 
-	// select all burgers
-	selectAll: function (callback) {
-
-		connection.query('SELECT * FROM projects', function (err, result) {
-			if (err) throw err;
-			callback(result);
-		});
-
-	}
-};
-
-var project = {
-
-  selectAll: function (callback) {
-    orm.selectAll(function (res) {
-      callback(res);
-    });
-  }
-
-};
-// ==============================
 fs.readdirSync(__dirname)
   .filter(function(file) {
     return (

@@ -1,17 +1,17 @@
 require("express-fileupload");
 const db = require("../models");
 const aws = require('aws-sdk');
-
-// Node Dependencies
-const express = require('express');
-const router = express.Router();
+const dotenv = require('dotenv');
 
 
 
-let s3 = new aws.S3({
+dotenv.config();
+aws.config.update({
     accessKeyId: process.env.accessKeyId,
     secretAccessKey: process.env.secretAccessKey
-  });
+});
+
+
 
 module.exports = function (app) {
     app.get("/api/projects", function (req, res) {
@@ -27,42 +27,52 @@ module.exports = function (app) {
             res.json(dbProject);
         });
     });
-    // --------------------------
-// ============================================
 
 
-// ===============
 
-// Index Redirect
-router.get('/', function (req, res) {
-    res.redirect('/');
-  });
-  
-  
-  // Index Page (render all burgers)
-  router.get('/index', function (req, res) {
-    project.selectAll(function (data) {
-      var hbsObject = { projects: data };
-      //console.log(hbsObject);
-      res.render('index', hbsObject);
+    app.get("/index", function (req, res) {
+        // console.log("page load");
+        //    db.Project.findAll({attributes: ['url']}).then(function (projects) {
+        //     console.log(projects);
+
+        //   });
     });
-  });
 
-    // ------------------------
+    app.get("/", function (req, res) {
+        console.log("console data");
+        db.Project.findAll({ attributes: ['title', 'url'] }).then(function (projects) {
 
-    app.get("/api/projects/:title/:oName", function (req, res) {
-        const s3 = new aws.S3();
+            //  db data consoled
+            // console.log(projects['title']);
+            var hbsObject = { files: projects };
+            for (var i = 0; i < projects.length; i++) {
+                // console.log(projects[i]['url']);
+                var url = projects[i]['url'];
+                
+                
+            }
+            // console.log(files);
 
-        db.Project.findOne({
-            where: {
-                title: req.params.title,
-                oName: req.params.oName,
-            },
-            include: [db.User]
-        }).then(function (dbProject) {
-            res.json(dbProject);
+            res.render("index", hbsObject);
+
         });
     });
+    // -------------------
+
+
+    // app.get("/api/projects/:title/:oName", function (req, res) {
+    //     const s3 = new aws.S3();
+
+    //     db.Project.findOne({
+    //         where: {
+    //             title: req.params.title,
+    //             oName: req.params.oName,
+    //         },
+    //         include: [db.User]
+    //     }).then(function (dbProject) {
+    //         res.json(dbProject);
+    //     });
+    // });
 
     app.post("/api/projects", function (req, res) {
         const s3 = new aws.S3();
@@ -76,7 +86,7 @@ router.get('/', function (req, res) {
             Bucket: 'teamawesome55',
             ACL: 'public-read',
             Body: buffer,
-            Key: req.body.oName + "/" + req.body.title + "/" + file.originalname,
+            Key: req.body.description + "/" + req.body.title + "/" + file.originalname,
         }
 
         s3.upload(params, function (err, data) {
@@ -86,16 +96,33 @@ router.get('/', function (req, res) {
                 let newProject = {
                     title: req.body.title,
                     description: req.body.description,
-                    category: req.body.category,
-                    location: req.body.location,
-                    oName: req.body.oName,
-                    Username: req.body.oName,
-                    mainFile: data.Location,
+                    url: data.Location,
                 }
+
+                // db.User.findOne({
+                //     where: {
+                //         username: newProject.oName,
+                //     }
+                // }).then(function (dbUser) {
+                //     let projects = dbUser.pNames;
+                //     console.log("\n\n\n" + projects + "\n\n\n");
+                //     if (projects === "null" || projects === null)
+                //         projects = newProject.title + ",";
+                //     else
+                //         projects += newProject.title + ",";
+
+                //     db.User.update(
+                //         { pNames: projects },
+                //         { returning: true, where: { username: newProject.oName } }
+                //     ).then(function (data) {
+                //         console.log(data);
+                //     });
+                // })
 
                 db.Project.create(newProject).then(function (dbProject) {
                     res.json(dbProject);
                 });
+                res.redirect('/');
             }
         });
     });
